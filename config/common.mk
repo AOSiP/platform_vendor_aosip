@@ -30,6 +30,12 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/aosip/prebuilt/common/etc/mkshrc:system/etc/mkshrc
 
+# Backup Tool
+PRODUCT_COPY_FILES += \
+    vendor/aosip/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
+    vendor/aosip/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions \
+    vendor/aosip/prebuilt/common/bin/50-base.sh:system/addon.d/50-base.sh
+
 # Packages
 include vendor/aosip/config/packages.mk
 
