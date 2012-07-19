@@ -65,6 +65,16 @@ PRODUCT_PACKAGES += \
     wget \
     zip
 
+# Openssh
+PRODUCT_PACKAGES += \
+    scp \
+    sftp \
+    ssh \
+    sshd \
+    sshd_config \
+    ssh-keygen \
+    start-ssh
+
 # Include librsjni explicitly to workaround GMS issue
 PRODUCT_PACKAGES += \
     librsjni
