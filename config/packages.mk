@@ -75,6 +75,10 @@ PRODUCT_PACKAGES += \
     ssh-keygen \
     start-ssh
 
+# rsync
+PRODUCT_PACKAGES += \
+    rsync
+
 # Include librsjni explicitly to workaround GMS issue
 PRODUCT_PACKAGES += \
     librsjni
