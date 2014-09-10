@@ -105,3 +105,5 @@ include vendor/aosip/config/packages.mk
 
 # Versioning
 include vendor/aosip/config/version.mk
+
+$(call inherit-product-if-exists, vendor/extra/product.mk)
