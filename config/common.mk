@@ -44,6 +44,9 @@ PRODUCT_COPY_FILES += \
 # Common overlay
 PRODUCT_PACKAGE_OVERLAYS += vendor/aosip/overlay/common
 
+# Include LatinIME dictionaries
+PRODUCT_PACKAGE_OVERLAYS += vendor/aosip/overlay/dictionaries
+
 # Packages
 include vendor/aosip/config/packages.mk
 
