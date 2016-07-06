@@ -33,7 +33,6 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.com.google.clientidbase=$(PRODUCT_GMS_CLIENTID_BASE)
 endif
 
-# Backup Tool
 PRODUCT_COPY_FILES += \
     vendor/aosip/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
     vendor/aosip/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions \
@@ -49,6 +48,10 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.ota.allow_downgrade=true
 endif
 endif
+
+# Backup Services whitelist
+PRODUCT_COPY_FILES += \
+    vendor/aosip/config/backup.xml:system/etc/sysconfig/backup.xml
 
 # Charger
 PRODUCT_PACKAGES += \
