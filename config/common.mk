@@ -125,6 +125,9 @@ PRODUCT_PACKAGES += \
     libffmpeg_omx \
     media_codecs_ffmpeg.xml
 
+# Recommend using the non debug dexpreopter
+USE_DEX2OAT_DEBUG ?= false
+
 # Needed by some RILs and for some gApps packages
 PRODUCT_PACKAGES += \
     librsjni \
