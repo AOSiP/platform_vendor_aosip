@@ -74,3 +74,6 @@ include vendor/aosip/config/packages.mk
 
 # Versioning
 include vendor/aosip/config/version.mk
+
+# include definitions for SDCLANG
+include vendor/aosip/sdclang/sdclang.mk
