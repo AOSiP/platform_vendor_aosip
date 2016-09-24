@@ -140,3 +140,6 @@ PRODUCT_BOOT_JARS += \
 # Charger images
 PRODUCT_PACKAGES += \
     charger_res_images
+
+# include definitions for SDCLANG
+include vendor/aosip/sdclang/sdclang.mk
