@@ -407,15 +407,16 @@ unset f
 
 # Make using all available CPUs
 function mka() {
-    case `uname -s` in
-        Darwin)
-            make -j `sysctl hw.ncpu|cut -d" " -f2` "$@"
-            ;;
-        *)
-            schedtool -B -n 1 -e ionice -n 1 make -j `cat /proc/cpuinfo | grep "^processor" | wc -l` "$@"
-            ;;
-    esac
-}
+     local T=$(gettop)
+     if [ "$T" ]; then
+         case `uname -s` in
+             Darwin)
+                  make -C $T -j `sysctl hw.ncpu|cut -d" " -f2` "$@"
+                  ;;
+              *)
+ +                mk_timer schedtool -B -n 10 -e ionice -n 7 make -C $T -j$(cat /proc/cpuinfo | grep "^processor" | wc -l) "$@"
+                  ;;
+          esac
 
 # Enable SD-LLVM if available
 if [ -d $(gettop)/prebuilts/snapdragon-llvm/toolchains ]; then
