@@ -46,6 +46,13 @@ PRODUCT_COPY_FILES += \
     vendor/aosip/prebuilt/common/bin/50-base.sh:system/addon.d/50-base.sh \
     vendor/aosip/prebuilt/common/bin/blacklist:system/addon.d/blacklist
 
+ifeq ($(AB_OTA_UPDATER),true)
+PRODUCT_COPY_FILES += \
+    vendor/aosip/prebuilt/common/bin/backuptool_ab.sh:system/bin/backuptool_ab.sh \
+    vendor/aosip/prebuilt/common/bin/backuptool_ab.functions:system/bin/backuptool_ab.functions \
+    vendor/aosip/prebuilt/common/bin/backuptool_postinstall.sh:system/bin/backuptool_postinstall.sh
+endif
+
 PRODUCT_COPY_FILES += \
     vendor/aosip/prebuilt/common/etc/init.d/00banner:system/etc/init.d/00banner \
     vendor/aosip/prebuilt/common/bin/sysinit:system/bin/sysinit
