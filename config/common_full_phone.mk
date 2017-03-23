@@ -16,3 +16,7 @@ PRODUCT_COPY_FILES += \
 # SIM Toolkit
 PRODUCT_PACKAGES += \
     Stk
+
+# Sensitive Phone Numbers list
+PRODUCT_COPY_FILES += \
+    vendor/aosip/prebuilt/common/etc/sensitive_pn.xml:system/etc/sensitive_pn.xml
