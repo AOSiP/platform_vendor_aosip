@@ -89,4 +89,10 @@
     <!-- Control whether Night display is available. This should only be enabled on devices
          with HWC 2.0 or higher. -->
     <bool name="config_nightDisplayAvailable">true</bool>
+
+    <!-- disabled til used ime packages -->
+    <string-array name="config_disabledUntilUsedPreinstalledImes">
+        <item>com.google.android.inputmethod.latin</item>
+        <item>com.android.inputmethod.latin</item>
+    </string-array>
 </resources>
