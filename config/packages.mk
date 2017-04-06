@@ -2,7 +2,8 @@
 PRODUCT_PACKAGES += \
     Basic \
     Jelly \
-    LatinIME
+    LatinIME \
+    Turbo
 
 # Extra tools
 PRODUCT_PACKAGES += \
