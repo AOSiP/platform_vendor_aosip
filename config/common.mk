@@ -23,8 +23,20 @@ PRODUCT_COPY_FILES += \
     vendor/aosip/prebuilt/common/bin/50-base.sh:system/addon.d/50-base.sh \
 
 # Bootanimation
+TARGET_BOOTANIMATION_720P := $(shell \
+   if [ $(TARGET_SCREEN_WIDTH) -le 720 ]; then \
+      echo 'true'; \
+   else \
+      echo ''; \
+   fi )
+
+ifeq ($(TARGET_BOOTANIMATION_720P), true)
 PRODUCT_COPY_FILES += \
-    vendor/aosip/prebuilt/common/bootanimation/bootanimation.zip:system/media/bootanimation.zip
+    vendor/aosip/prebuilt/common/media/bootanimation/720.zip:system/media/bootanimation.zip
+else
+PRODUCT_COPY_FILES += \
+    vendor/aosip/prebuilt/common/media/bootanimation/1080.zip:system/media/bootanimation.zip
+endif
 
 DEVICE_PACKAGE_OVERLAYS += \
     vendor/aosip/overlay/common \
