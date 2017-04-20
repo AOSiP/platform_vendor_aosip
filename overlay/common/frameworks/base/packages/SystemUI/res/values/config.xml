@@ -26,4 +26,7 @@
          does not work well, particularly with noisy touchscreens. Note that disabling it may
          increase the rate of unintentional unlocks. -->
     <bool name="config_lockscreenAntiFalsingClassifierEnabled">false</bool>
+
+    <bool name="quick_settings_show_full_alarm">true</bool>
+
 </resources>
