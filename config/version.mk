@@ -13,12 +13,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-#JDCTeam versioning
-ifndef JDC_BUILD_TYPE
-    JDC_BUILD_TYPE := STABLE
-endif
+# Versioning System
+PRODUCT_VERSION_MAJOR = 6
+PRODUCT_VERSION_MINOR = 0
 
-JDC_VERSION := $(PLATFORM_VERSION)-$(shell date +%Y%m%d)-$(JDC_BUILD_TYPE)
+AOSIP_BUILDTYPE ?= Derp
+
+ROM_VERSION := $(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR)-$(AOSIP_BUILDTYPE)-$(CUSTOM_BUILD)-$(shell date -u +%Y%m%d)
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.jdc.version=$(JDC_VERSION)
+  ro.aosip.version=$(ROM_VERSION) \
+  ro.aosip.device=$(CUSTOM_BUILD) \
+  ro.modversion=$(ROM_VERSION)

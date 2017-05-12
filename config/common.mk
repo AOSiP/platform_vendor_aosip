@@ -12,43 +12,32 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-include vendor/aosp/config/version.mk
+include vendor/aosip/config/version.mk
 
-PRODUCT_BRAND ?= JDCTeam
+PRODUCT_BRAND ?= AOSiP
 
 # Backup Tool
 PRODUCT_COPY_FILES += \
-    vendor/aosp/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
-    vendor/aosp/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions \
-    vendor/aosp/prebuilt/common/bin/50-base.sh:system/addon.d/50-base.sh \
+    vendor/aosip/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
+    vendor/aosip/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions \
+    vendor/aosip/prebuilt/common/bin/50-base.sh:system/addon.d/50-base.sh \
 
 # Bootanimation
 PRODUCT_COPY_FILES += \
-    vendor/aosp/prebuilt/common/bootanimation/bootanimation.zip:system/media/bootanimation.zip
-
-# SuperSU
-PRODUCT_COPY_FILES += \
-    vendor/aosp/prebuilt/common/magisk/Magisk.zip:install/magisk/Magisk.zip
+    vendor/aosip/prebuilt/common/bootanimation/bootanimation.zip:system/media/bootanimation.zip
 
 DEVICE_PACKAGE_OVERLAYS += \
-    vendor/aosp/overlay/common \
-    vendor/aosp/overlay/dictionaries
+    vendor/aosip/overlay/common \
+    vendor/aosip/overlay/dictionaries
 
-# EXT4/F2FS format script
-PRODUCT_COPY_FILES += \
-    vendor/aosp/prebuilt/common/bin/format.sh:install/bin/format.sh
-
-# Custom JDCTeam packages
+# Custom packages
 PRODUCT_PACKAGES += \
     BluetoothExt \
     LatinIME \
     Launcher3 \
     LiveWallpapers \
     LiveWallpapersPicker \
-    MagiskManager \
-    OTAUpdates \
     Stk \
-    Substratum \
     ThemeInterfacer \
     Turbo
 
@@ -81,35 +70,34 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     Exchange2
 
+# DU Utils Library
+PRODUCT_BOOT_JARS += \
+    org.dirtyunicorns.utils
+
+# DU Utils Library
+PRODUCT_PACKAGES += \
+    org.dirtyunicorns.utils
+
 # Backup Services whitelist
 PRODUCT_COPY_FILES += \
-    vendor/aosp/config/permissions/backup.xml:system/etc/sysconfig/backup.xml
-    
-# For keyboard gesture typing
-ifneq ($(filter jflte,$(TARGET_PRODUCT)),)
-PRODUCT_COPY_FILES += \
-    vendor/aosp/prebuilt/common/lib/libjni_latinimegoogle.so:system/lib/libjni_latinime.so
-else
-PRODUCT_COPY_FILES += \
-    vendor/aosp/prebuilt/common/lib64/libjni_latinimegoogle.so:system/lib64/libjni_latinime.so
-endif
-    
+    vendor/aosip/config/permissions/backup.xml:system/etc/sysconfig/backup.xml
+
 # init.d support
 PRODUCT_COPY_FILES += \
-    vendor/aosp/prebuilt/common/etc/init.d/00banner:system/etc/init.d/00banner \
-    vendor/aosp/prebuilt/common/bin/sysinit:system/bin/sysinit
+    vendor/aosip/prebuilt/common/etc/init.d/00banner:system/etc/init.d/00banner \
+    vendor/aosip/prebuilt/common/bin/sysinit:system/bin/sysinit
 
-# JDC-specific init file
+# AOSiP-specific init file
 PRODUCT_COPY_FILES += \
-    vendor/aosp/prebuilt/common/etc/init.local.rc:root/init.jdc.rc
-
-# Copy over added mimetype supported in libcore.net.MimeUtils
-PRODUCT_COPY_FILES += \
-    vendor/aosp/prebuilt/common/lib/content-types.properties:system/lib/content-types.properties
+    vendor/aosip/prebuilt/common/etc/init.local.rc:root/init.aosip.rc
 
 # Copy over added mimetype supported in libcore.net.MimeUtils
 PRODUCT_COPY_FILES += \
-    vendor/aosp/prebuilt/common/lib/content-types.properties:system/lib/content-types.properties
+    vendor/aosip/prebuilt/common/lib/content-types.properties:system/lib/content-types.properties
+
+# Copy over added mimetype supported in libcore.net.MimeUtils
+PRODUCT_COPY_FILES += \
+    vendor/aosip/prebuilt/common/lib/content-types.properties:system/lib/content-types.properties
 
 # Enable SIP+VoIP on all targets
 PRODUCT_COPY_FILES += \
@@ -121,17 +109,13 @@ PRODUCT_COPY_FILES += \
 
 # Prebuilt ConsumerIR
 PRODUCT_COPY_FILES += \
-    vendor/aosp/prebuilt/common/lib/hw/consumerir.msm8960.old:system/lib/hw/consumerir.msm8960.old
-    
+    vendor/aosip/prebuilt/common/lib/hw/consumerir.msm8960.old:system/lib/hw/consumerir.msm8960.old
+
 # Stagefright FFMPEG plugin
 PRODUCT_PACKAGES += \
     libffmpeg_extractor \
     libffmpeg_omx \
     media_codecs_ffmpeg.xml
-
-# Changelog
-PRODUCT_COPY_FILES += \
-    vendor/aosp/Changelog.md:system/etc/Changelog.md
 
 # Needed by some RILs and for some gApps packages
 PRODUCT_PACKAGES += \

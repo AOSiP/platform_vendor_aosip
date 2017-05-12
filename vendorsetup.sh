@@ -1,8 +1,9 @@
-add_lunch_combo jdc_jflte-user
-add_lunch_combo jdc_jflte-userdebug
-add_lunch_combo jdc_gemini-user
-add_lunch_combo jdc_gemini-userdebug
-add_lunch_combo jdc_h850-user
-add_lunch_combo jdc_h850-userdebug
-add_lunch_combo jdc_oneplus2-user
-add_lunch_combo jdc_oneplus2-userdebug
+if [ -z ${variant} ]; then
+  export variant="userdebug";
+fi
+
+for combo in $(ls vendor/aosip/products/aosip_*.mk | sed -e 's/vendor\/aosip\/products\///' -e "s/.mk/-$variant/")
+do
+add_lunch_combo ${combo}
+done
+
