@@ -49,6 +49,7 @@ PRODUCT_PACKAGES += \
     Launcher3 \
     LiveWallpapers \
     LiveWallpapersPicker \
+    MusicFX \
     Stk \
     ThemeInterfacer \
     Turbo
