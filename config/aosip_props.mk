@@ -29,7 +29,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     media.sf.omx-plugin=libffmpeg_omx.so \
     media.sf.extractor-plugin=libffmpeg_extractor.so \
     ro.storage_manager.enabled=true \
-    ro.substratum.verified=true \
     persist.sys.recovery_update=false
 
 # Set cache location
