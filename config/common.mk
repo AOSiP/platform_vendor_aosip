@@ -50,6 +50,7 @@ PRODUCT_PACKAGES += \
     LiveWallpapers \
     LiveWallpapersPicker \
     MusicFX \
+    OmniStyle \
     Stk \
     ThemeInterfacer \
     Turbo
