@@ -50,6 +50,7 @@ PRODUCT_PACKAGES += \
     LiveWallpapers \
     LiveWallpapersPicker \
     MusicFX \
+    OmniJaws \
     OmniStyle \
     Stk \
     ThemeInterfacer \
