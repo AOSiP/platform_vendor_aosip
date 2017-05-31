@@ -52,6 +52,7 @@ PRODUCT_PACKAGES += \
     MusicFX \
     OmniJaws \
     OmniStyle \
+    OTAUpdates \
     Stk \
     ThemeInterfacer \
     Turbo
