@@ -75,5 +75,9 @@ include vendor/aosip/config/packages.mk
 # Versioning
 include vendor/aosip/config/version.mk
 
-# include definitions for SDCLANG
-include vendor/aosip/sdclang/sdclang.mk
+# Include SDCLANG definitions if it is requested and available
+ifeq ($(HOST_OS),linux)
+    ifneq ($(wildcard vendor/qcom/sdclang-3.8/),)
+        include vendor/aosip/sdclang/sdclang.mk
+    endif
+endif
