@@ -31,6 +31,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.storage_manager.enabled=true \
     persist.sys.recovery_update=false
 
+# OTA Updates
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.ota.romname=AOSiP \
+    persist.ota.version=$(shell date +%Y%m%d) \
+    persist.ota.manifest=https://raw.githubusercontent.com/AOSIP/ota/nougat-mr2/aosip_$(CUSTOM_BUILD).xml
+
 # Set cache location
 ifeq ($(BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE),)
 ADDITIONAL_DEFAULT_PROPERTIES += \
