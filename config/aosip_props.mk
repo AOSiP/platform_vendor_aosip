@@ -28,7 +28,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     media.sf.omx-plugin=libffmpeg_omx.so \
     media.sf.extractor-plugin=libffmpeg_extractor.so \
     ro.storage_manager.enabled=true \
-    persist.sys.recovery_update=false
+    persist.sys.recovery_update=false \
+    ro.com.google.ime.theme_id=5
 
 # OTA Updates
 PRODUCT_PROPERTY_OVERRIDES += \
