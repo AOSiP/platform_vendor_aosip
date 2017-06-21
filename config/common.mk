@@ -101,8 +101,7 @@ PRODUCT_COPY_FILES += \
 
 # init.d support
 PRODUCT_COPY_FILES += \
-    vendor/aosip/prebuilt/common/etc/init.d/00banner:system/etc/init.d/00banner \
-    vendor/aosip/prebuilt/common/bin/sysinit:system/bin/sysinit
+    vendor/aosip/prebuilt/common/etc/init.d/00banner:system/etc/init.d/00banner
 
 # AOSiP-specific init file
 PRODUCT_COPY_FILES += \
