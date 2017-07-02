@@ -45,6 +45,7 @@ DEVICE_PACKAGE_OVERLAYS += \
 # Custom packages
 PRODUCT_PACKAGES += \
     BluetoothExt \
+    Jelly \
     LatinIME \
     Launcher3 \
     LiveWallpapers \
