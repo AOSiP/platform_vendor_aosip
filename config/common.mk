@@ -130,6 +130,13 @@ PRODUCT_PACKAGES += \
     librsjni \
     libprotobuf-cpp-full
 
+# TCM (TCP Connection Management)
+PRODUCT_PACKAGES += \
+    tcmiface
+
+PRODUCT_BOOT_JARS += \
+    tcmiface
+
 # Charger images
 PRODUCT_PACKAGES += \
     charger_res_images
