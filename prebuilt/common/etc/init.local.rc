@@ -24,9 +24,6 @@ on post-fs-data
     chown root log /dev/fscklogs/log
     chmod 0640 /dev/fscklogs/log
 
-    # allow system to communicate pocket state
-    chown system system /sys/kernel/pocket_judge/inpocket
-
 on boot
     # interactive governor
     chown system system /sys/devices/system/cpu/cpufreq/interactive/timer_rate
@@ -111,6 +108,9 @@ on boot
     chown system system /sys/block/dm-0/queue/scheduler
     chmod 0664 /sys/block/dm-0/queue/scheduler
     restorecon /sys/block/dm-0/queue/scheduler
+
+    # allow system to communicate pocket state
+    chown system system /sys/kernel/pocket_judge/inpocket
 
     chown system system /dev/cpuctl/cpu.notify_on_migrate
     chmod 0664 /dev/cpuctl/cpu.notify_on_migrate
