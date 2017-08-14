@@ -19,10 +19,10 @@ PRODUCT_RESTRICT_VENDOR_FILES := false
 
 # Device Maintainer
 
-PRODUCT_BUILD_PROP_OVERRIDES += DEVICE_MAINTAINERS="Omkar Shinde (Megatron007)"
+PRODUCT_BUILD_PROP_OVERRIDES += DEVICE_MAINTAINERS="Akash (markakash)"
 
 # Device Fingerprint
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_NAME=bullhead \
-    BUILD_FINGERPRINT="google/bullhead/bullhead:7.1.2/N2G47O/3852959:user/release-keys" \
-    PRIVATE_BUILD_DESC="bullhead-user 7.1.2 N2G47O 3852959 release-keys"
+    BUILD_FINGERPRINT="google/bullhead/bullhead:7.1.2/N2G48C/4104010:user/release-keys" \
+    PRIVATE_BUILD_DESC="bullhead-user 7.1.2 N2G48C 4104010 release-keys"
