@@ -95,4 +95,7 @@
         <item>com.google.android.inputmethod.latin</item>
         <item>com.android.inputmethod.latin</item>
     </string-array>
+
+    <!-- Enable blur support -->
+    <bool name="config_uiBlurEnabled">true</bool>
 </resources>
