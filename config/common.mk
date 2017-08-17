@@ -99,6 +99,9 @@ PRODUCT_MINIMIZE_JAVA_DEBUG_INFO := true
 # Common overlay
 PRODUCT_PACKAGE_OVERLAYS += vendor/aosip/overlay/common
 
+# Disable vendor restrictions
+PRODUCT_RESTRICT_VENDOR_FILES := false
+
 # Bootanimation
 include vendor/aosip/config/bootanimation.mk
 
