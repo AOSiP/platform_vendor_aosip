@@ -1,0 +1,2 @@
+add_lunch_combo aosip_angler-userdebug
+add_lunch_combo aosip_oneplus3-userdebug
