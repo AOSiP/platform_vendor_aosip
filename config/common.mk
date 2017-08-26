@@ -32,3 +32,6 @@ PRODUCT_COPY_FILES += \
 
 # Packages
 include vendor/aosip/config/packages.mk
+
+# Versioning
+include vendor/aosip/config/version.mk
