@@ -1,8 +1,7 @@
 # Required packages
 PRODUCT_PACKAGES += \
     Basic \
-    CellBroadcastReceiver \
-    Development \
+    Jelly \
     LatinIME
 
 # Extra tools
