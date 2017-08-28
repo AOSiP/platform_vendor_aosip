@@ -1,8 +1,6 @@
 # Required packages
 PRODUCT_PACKAGES += \
-    Basic \
     Jelly \
-    LatinIME \
     Turbo
 
 # Extra tools
