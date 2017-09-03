@@ -17,4 +17,7 @@ type ProductVariables struct {
 	Has_legacy_camera_hal1  *bool `json:",omitempty"`
 	Uses_media_extensions   *bool `json:",omitempty"`
 	Needs_text_relocations  *bool `json:",omitempty"`
+	QTIAudioPath            *string `json:",omitempty"`
+	QTIDisplayPath          *string `json:",omitempty"`
+	QTIMediaPath            *string `json:",omitempty"`
 }
