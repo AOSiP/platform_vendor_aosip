@@ -41,6 +41,9 @@ endif
 PRODUCT_COPY_FILES += \
     vendor/aosip/prebuilt/common/etc/mkshrc:system/etc/mkshrc
 
+# Common overlay
+PRODUCT_PACKAGE_OVERLAYS += vendor/aosip/overlay/common
+
 # Packages
 include vendor/aosip/config/packages.mk
 
