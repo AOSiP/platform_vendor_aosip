@@ -32295,4 +32295,35 @@
       port="8080"
       type="default"
   />
+
+  <apn carrier="StraightTalk VZW" 
+      mcc="001"
+      mnc="010"
+      apn="TRACFONE.VZWENTP"
+      type="default,dun,supl"
+      protocol="IPV4V6"
+      roaming_protocol="IPV4V6" />
+
+  <apn carrier="Straight Talk"
+       mcc="310"
+       mnc="260"
+       apn="wap.tracfone"
+       port="8080"
+       mmsc="http://mms.tracfone.com"
+       mvno_type="gid"
+       mvno_match_data="deff"
+       type="default,mms,supl" />
+
+  <apn carrier="Straight Talk"
+       mcc="310"
+       mnc="410"
+       apn="tfdata"
+       port="80"
+       mmsc="http://mms-tf.net"
+       mmsproxy="mms3.tracfone.com"
+       mmsport="80"
+       mvno_type="gid"
+       mvno_match_data="deff"
+       type="default,mms,supl" />
+
 </apns>
