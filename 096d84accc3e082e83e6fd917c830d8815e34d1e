@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d33bd8df_fb564605",
+        "filename": "build/envsetup.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 309,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2017-09-05T05:06:40Z",
+      "side": 1,
+      "message": "Can nuke this I doubt any of us have ever used it.",
+      "revId": "096d84accc3e082e83e6fd917c830d8815e34d1e",
+      "serverId": "44769751-fbfc-497d-9c9a-4bb318a4117c",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ca90e1bd_7418a933",
+        "filename": "build/envsetup.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 368,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2017-09-05T05:06:40Z",
+      "side": 1,
+      "message": "Don\u0027t add in mka for now, check LineageOS/android_vendor_lineage, they updated and simplified now, coz soong likes to boss around the number of jobs used anyways",
+      "revId": "096d84accc3e082e83e6fd917c830d8815e34d1e",
+      "serverId": "44769751-fbfc-497d-9c9a-4bb318a4117c",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8d024a75_cd2aacd3",
+        "filename": "build/tasks/kronic.mk",
+        "patchSetId": 3
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2017-09-05T05:06:40Z",
+      "side": 1,
+      "message": "I have couple edits for this will do later",
+      "revId": "096d84accc3e082e83e6fd917c830d8815e34d1e",
+      "serverId": "44769751-fbfc-497d-9c9a-4bb318a4117c",
+      "unresolved": false
+    }
+  ]
+}
