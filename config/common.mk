@@ -25,7 +25,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.com.android.dataroaming=false \
     ro.atrace.core.services=com.google.android.gms,com.google.android.gms.ui,com.google.android.gms.persistent \
     ro.com.android.dateformat=MM-dd-yyyy \
-    ro.build.selinux=1
+    ro.build.selinux=1 \
+    ro.carrier=unknown
 endif
 
 PRODUCT_COPY_FILES += \
