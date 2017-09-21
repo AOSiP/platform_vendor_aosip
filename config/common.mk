@@ -57,6 +57,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/aosip/prebuilt/common/etc/mkshrc:system/etc/mkshrc
 
+# Copy all AOSiP-specific init rc files
+$(foreach f,$(wildcard vendor/aosip/prebuilt/common/etc/init/*.rc),\
+	$(eval PRODUCT_COPY_FILES += $(f):system/etc/init/$(notdir $f)))
+
 # Fix Dialer
 PRODUCT_COPY_FILES +=  \
     vendor/aosip/prebuilt/common/sysconfig/dialer_experience.xml:system/etc/sysconfig/dialer_experience.xml
