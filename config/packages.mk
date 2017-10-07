@@ -1,7 +1,7 @@
 # Required packages
 PRODUCT_PACKAGES += \
     Jelly \
-    Messaging \
+    messaging \
     Turbo
 
 # Extra tools
