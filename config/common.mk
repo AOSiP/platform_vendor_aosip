@@ -62,6 +62,9 @@ PRODUCT_PACKAGE_OVERLAYS += vendor/aosip/overlay/common
 # Include LatinIME dictionaries
 PRODUCT_PACKAGE_OVERLAYS += vendor/aosip/overlay/dictionaries
 
+# Bootanimation
+include vendor/aosip/config/bootanimation.mk
+
 # Packages
 include vendor/aosip/config/packages.mk
 
