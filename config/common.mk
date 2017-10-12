@@ -59,6 +59,9 @@ EXCLUDE_SYSTEMUI_TESTS := true
 # Common overlay
 PRODUCT_PACKAGE_OVERLAYS += vendor/aosip/overlay/common
 
+# Bootanimation
+include vendor/aosip/config/bootanimation.mk
+
 # Packages
 include vendor/aosip/config/packages.mk
 
