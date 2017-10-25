@@ -15,9 +15,6 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <!-- set defaults for google services -->
-    <string name="config_appsAuthorizedForSharedAccounts">;com.android.vending;com.android.settings;</string>
-    <string name="config_persistentDataPackageName">com.google.android.gms</string>
 
     <string-array name="config_locationProviderPackageNames" translatable="false">
         <!-- The Google provider -->
@@ -26,19 +23,11 @@
         <item>com.android.location.fused</item>
     </string-array>
 
-    <!-- default dnd acess packages -->
-    <string name="config_defaultDndAccessPackages">com.google.android.GoogleCamera</string>
-
     <!-- non blockable notification packages -->
     <string-array name="config_nonBlockableNotificationPackages">
         <item>com.android.dialer</item>
         <item>com.google.android.dialer</item>
         <item>com.google.android.deskclock</item>
-    </string-array>
-
-    <!-- empheral resolver packages -->
-    <string-array name="config_ephemeralResolverPackage">
-        <item>com.google.android.gms</item>
     </string-array>
 
     <!-- Hide Project Fi app unless it is being used -->
