@@ -1,5 +1,6 @@
 # Required packages
 PRODUCT_PACKAGES += \
+    Gallery2 \
     Jelly \
     messaging \
     Turbo
