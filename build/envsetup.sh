@@ -384,5 +384,3 @@ do
     . $f
 done
 unset f
-
-addcompletions
