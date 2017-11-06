@@ -44,7 +44,7 @@ trap cleanup 0
 #
 # $1: device name
 # $2: vendor name
-# $3: JDC root directory
+# $3: AOSIP root directory
 # $4: is common device - optional, default to false
 # $5: cleanup - optional, default to true
 # $6: custom vendor makefile name - optional, default to false
@@ -65,15 +65,15 @@ function setup_vendor() {
         exit 1
     fi
 
-    export JDC_ROOT="$3"
-    if [ ! -d "$JDC_ROOT" ]; then
-        echo "\$JDC_ROOT must be set and valid before including this script!"
+    export AOSIP_ROOT="$3"
+    if [ ! -d "$AOSIP_ROOT" ]; then
+        echo "\$AOSIP_ROOT must be set and valid before including this script!"
         exit 1
     fi
 
     export OUTDIR=vendor/"$VENDOR"/"$DEVICE"
-    if [ ! -d "$JDC_ROOT/$OUTDIR" ]; then
-        mkdir -p "$JDC_ROOT/$OUTDIR"
+    if [ ! -d "$AOSIP_ROOT/$OUTDIR" ]; then
+        mkdir -p "$AOSIP_ROOT/$OUTDIR"
     fi
 
     VNDNAME="$6"
@@ -81,9 +81,9 @@ function setup_vendor() {
         VNDNAME="$DEVICE"
     fi
 
-    export PRODUCTMK="$JDC_ROOT"/"$OUTDIR"/"$VNDNAME"-vendor.mk
-    export ANDROIDMK="$JDC_ROOT"/"$OUTDIR"/Android.mk
-    export BOARDMK="$JDC_ROOT"/"$OUTDIR"/BoardConfigVendor.mk
+    export PRODUCTMK="$AOSIP_ROOT"/"$OUTDIR"/"$VNDNAME"-vendor.mk
+    export ANDROIDMK="$AOSIP_ROOT"/"$OUTDIR"/Android.mk
+    export BOARDMK="$AOSIP_ROOT"/"$OUTDIR"/BoardConfigVendor.mk
 
     if [ "$4" == "true" ] || [ "$4" == "1" ]; then
         COMMON=1
@@ -715,15 +715,15 @@ function get_file() {
 # Convert apk|jar .odex in the corresposing classes.dex
 #
 function oat2dex() {
-    local JDC_TARGET="$1"
+    local AOSIP_TARGET="$1"
     local OEM_TARGET="$2"
     local SRC="$3"
     local TARGET=
     local OAT=
 
     if [ -z "$BAKSMALIJAR" ] || [ -z "$SMALIJAR" ]; then
-        export BAKSMALIJAR="$JDC_ROOT"/vendor/aosp/build/tools/smali/baksmali.jar
-        export SMALIJAR="$JDC_ROOT"/vendor/aosp/build/tools/smali/smali.jar
+        export BAKSMALIJAR="$AOSIP_ROOT"/vendor/aosip/build/tools/smali/baksmali.jar
+        export SMALIJAR="$AOSIP_ROOT"/vendor/aosip/build/tools/smali/smali.jar
     fi
 
     # Extract existing boot.oats to the temp folder
@@ -748,11 +748,11 @@ function oat2dex() {
         FULLY_DEODEXED=1 && return 0 # system is fully deodexed, return
     fi
 
-    if [ ! -f "$JDC_TARGET" ]; then
+    if [ ! -f "$AOSIP_TARGET" ]; then
         return;
     fi
 
-    if grep "classes.dex" "$JDC_TARGET" >/dev/null; then
+    if grep "classes.dex" "$AOSIP_TARGET" >/dev/null; then
         return 0 # target apk|jar is already odexed, return
     fi
 
@@ -856,7 +856,7 @@ function extract() {
     local HASHLIST=( ${PRODUCT_COPY_FILES_HASHES[@]} ${PRODUCT_PACKAGES_HASHES[@]} )
     local COUNT=${#FILELIST[@]}
     local SRC="$2"
-    local OUTPUT_ROOT="$JDC_ROOT"/"$OUTDIR"/proprietary
+    local OUTPUT_ROOT="$AOSIP_ROOT"/"$OUTDIR"/proprietary
     local OUTPUT_TMP="$TMPDIR"/"$OUTDIR"/proprietary
 
     if [ "$SRC" = "adb" ]; then
@@ -864,7 +864,7 @@ function extract() {
     fi
 
     if [ -f "$SRC" ] && [ "${SRC##*.}" == "zip" ]; then
-        DUMPDIR="$CM_ROOT"/system_dump
+        DUMPDIR="$AOSIP_ROOT"/system_dump
 
         # Check if we're working with the same zip that was passed last time.
         # If so, let's just use what's already extracted.
@@ -884,7 +884,7 @@ function extract() {
             # If OTA is block based, extract it.
             elif [ -a "$DUMPDIR"/system.new.dat ]; then
                 echo "Converting system.new.dat to system.img"
-                python "$CM_ROOT"/vendor/cm/build/tools/sdat2img.py "$DUMPDIR"/system.transfer.list "$DUMPDIR"/system.new.dat "$DUMPDIR"/system.img 2>&1
+                python "$AOSIP_ROOT"/vendor/AOSIP/build/tools/sdat2img.py "$DUMPDIR"/system.transfer.list "$DUMPDIR"/system.new.dat "$DUMPDIR"/system.img 2>&1
                 rm -rf "$DUMPDIR"/system.new.dat "$DUMPDIR"/system
                 mkdir "$DUMPDIR"/system "$DUMPDIR"/tmp
                 echo "Requesting sudo access to mount the system.img"
@@ -942,7 +942,7 @@ function extract() {
         local DEST="$OUTPUT_DIR/$FROM"
 
         if [ "$SRC" = "adb" ]; then
-            # Try JDC target first
+            # Try AOSIP target first
             adb pull "/$TARGET" "$DEST"
             # if file does not exist try OEM target
             if [ "$?" != "0" ]; then
@@ -952,7 +952,7 @@ function extract() {
             # Try OEM target first
             if [ -f "$SRC/$FILE" ]; then
                 cp "$SRC/$FILE" "$DEST"
-            # if file does not exist try JDC target
+            # if file does not exist try AOSIP target
             elif [ -f "$SRC/$TARGET" ]; then
                 cp "$SRC/$TARGET" "$DEST"
             else
@@ -1033,7 +1033,7 @@ function extract_firmware() {
     local FILELIST=( ${PRODUCT_COPY_FILES_LIST[@]} )
     local COUNT=${#FILELIST[@]}
     local SRC="$2"
-    local OUTPUT_DIR="$JDC_ROOT"/"$OUTDIR"/radio
+    local OUTPUT_DIR="$AOSIP_ROOT"/"$OUTDIR"/radio
 
     if [ "$VENDOR_RADIO_STATE" -eq "0" ]; then
         echo "Cleaning firmware output directory ($OUTPUT_DIR).."
