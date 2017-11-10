@@ -129,3 +129,6 @@ include vendor/aosip/config/accents.mk
 
 # Themes
 include vendor/aosip/config/themes.mk
+
+# GSans font
+include vendor/aosip/config/fonts.mk
