@@ -376,10 +376,11 @@ function gerrit()
         if [ -d ".git/refs/remotes/gerrit" ]; then
             git remote rm gerrit;
         fi
+        [[ -z "${GERRIT_USER}" ]] && export GERRIT_USER=$(git config --get review.review.aosiprom.com.username);
         if [[ -z "${GERRIT_USER}" ]]; then
-            git remote add gerrit $(git remote -v | grep AOSiP | awk '{print $2}' | uniq | sed -e 's|https://github.com/AOSiP|ssh://review.aosiprom.com:29418/AOSIP|');
+            git remote add gerrit $(git remote -v | grep AOSiP | awk '{print $2}' | uniq | sed -e "s|https://github.com/AOSiP|ssh://review.aosiprom.com:29418/AOSIP|");
         else
-            git remote add gerrit $(git remote -v | grep AOSiP | awk '{print $2}' | uniq | sed -e 's|https://github.com/AOSiP|ssh://${GERRIT_USER}@review.aosiprom.com:29418/AOSIP|');
+            git remote add gerrit $(git remote -v | grep AOSiP | awk '{print $2}' | uniq | sed -e "s|https://github.com/AOSiP|ssh://${GERRIT_USER}@review.aosiprom.com:29418/AOSIP|");
         fi
     fi
 }
