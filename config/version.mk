@@ -13,8 +13,8 @@
 # limitations under the License.
 
 # Versioning System
-PRODUCT_VERSION_MAJOR = 7
-PRODUCT_VERSION_MINOR = 0
+PRODUCT_VERSION_MAJOR = 8
+PRODUCT_VERSION_MINOR = 1
 
 AOSIP_BUILDTYPE ?= Derp
 
