@@ -1,6 +1,7 @@
 # Required packages
 PRODUCT_PACKAGES += \
     Gallery2 \
+    Launcher3 \
     messaging \
     Turbo
 
