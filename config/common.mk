@@ -62,9 +62,6 @@ EXCLUDE_SYSTEMUI_TESTS := true
 # Common overlay
 PRODUCT_PACKAGE_OVERLAYS += vendor/aosip/overlay/common
 
-# Include LatinIME dictionaries
-PRODUCT_PACKAGE_OVERLAYS += vendor/aosip/overlay/dictionaries
-
 # Bootanimation
 include vendor/aosip/config/bootanimation.mk
 
