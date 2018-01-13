@@ -23,10 +23,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_BOOT_JARS += \
     org.dirtyunicorns.utils
 
+ifeq ($(BOARD_USES_QCOM_HARDWARE),true)
 # Telephony
 PRODUCT_PACKAGES += \
     telephony-ext
 
 PRODUCT_BOOT_JARS += \
     telephony-ext
-
+endif
