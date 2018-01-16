@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "23f072a6_0d0eb0b7",
+        "filename": "sdclang/sdclang.mk",
+        "patchSetId": 3
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1000063
+      },
+      "writtenOn": "2018-01-16T17:14:49Z",
+      "side": 1,
+      "message": "vendor/aosip/...",
+      "revId": "8137f35063ee6d0c0f5ee296ab31a495c27a85dc",
+      "serverId": "44769751-fbfc-497d-9c9a-4bb318a4117c",
+      "unresolved": false
+    }
+  ]
+}
