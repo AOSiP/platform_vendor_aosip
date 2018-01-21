@@ -2,6 +2,7 @@
 PRODUCT_PACKAGES += \
     Gallery2 \
     Launcher3 \
+    LiveWallpapersPicker \
     messaging \
     Turbo
 
