@@ -6,6 +6,7 @@ PRODUCT_PACKAGES += \
     LiveWallpapers \
     LiveWallpapersPicker \
     messaging \
+    DuiDarkTheme \
     SettingsDarkTheme \
     SystemDarkTheme \
     Turbo
