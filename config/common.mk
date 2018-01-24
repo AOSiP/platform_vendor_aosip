@@ -64,6 +64,10 @@ PRODUCT_COPY_FILES +=  \
 PRODUCT_COPY_FILES += \
     vendor/aosip/prebuilt/common/bin/clean_cache.sh:system/bin/clean_cache.sh
 
+# Media
+PRODUCT_PROPERTY_OVERRIDES += \
+    media.recorder.show_manufacturer_and_model=true
+
 # Don't compile SystemUITests
 EXCLUDE_SYSTEMUI_TESTS := true
 

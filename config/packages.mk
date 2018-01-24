@@ -6,6 +6,7 @@ PRODUCT_PACKAGES += \
     LiveWallpapers \
     LiveWallpapersPicker \
     messaging \
+    SnapdragonCamera \
     Turbo
 
 # Extra tools
