@@ -26,9 +26,10 @@ PRODUCT_BOOT_JARS += \
     org.dirtyunicorns.utils
 
 # Telephony
+ifeq ($(filter aosip_shamu,$(TARGET_PRODUCT)),)
 PRODUCT_PACKAGES += \
     telephony-ext
 
 PRODUCT_BOOT_JARS += \
     telephony-ext
-
+endif
