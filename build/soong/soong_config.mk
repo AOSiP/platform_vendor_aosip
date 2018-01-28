@@ -36,6 +36,7 @@ aosip_soong:
 	echo '    "QCOMGPSPath": "$(call project-path-for,qcom-gps)",';  \
 	echo '    "QCOMMediaPath": "$(call project-path-for,qcom-media)",';  \
 	echo '    "QCOMSensorsPath": "$(call project-path-for,qcom-sensors)",';  \
-	echo '    "Uses_qcom_bsp_legacy": $(if $(filter true,$(TARGET_USES_QCOM_BSP_LEGACY)),true,false)'; \
+	echo '    "Uses_qcom_bsp_legacy": $(if $(filter true,$(TARGET_USES_QCOM_BSP_LEGACY)),true,false),'; \
+	echo '    "Uses_qcom_hardware": $(if $(filter true,$(BOARD_USES_QCOM_HARDWARE)),true,false)'; \
 	echo '},'; \
 	echo '') > $(SOONG_VARIABLES_TMP)
