@@ -69,4 +69,6 @@
         <item>com.google.android.gms/com.google.android.gms.update.SystemUpdateService</item>
     </string-array>
 
+    <bool name="config_enableAutoPowerModes">true</bool>
+
 </resources>
