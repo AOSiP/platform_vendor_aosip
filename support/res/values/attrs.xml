@@ -25,6 +25,7 @@
     <!-- Value to pass to callback when restore button is pressed -->
     <declare-styleable name="ColorPickerPreference">
         <attr name="alphaSlider" format="boolean" />
+        <attr name="ledPreview" format="boolean" />
     </declare-styleable>
 
     <!-- Base attributes available to CircularImageView -->
