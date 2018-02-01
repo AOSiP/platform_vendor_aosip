@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c64deee1_4e7b2070",
+        "filename": "prebuilt/common/etc/sensitive_pn.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1000063
+      },
+      "writtenOn": "2018-02-01T14:11:01Z",
+      "side": 1,
+      "message": "no idea what that would do in belgium, nr 112 is emergency, 111 was skipped because too easy to dial unknowing",
+      "revId": "9d0b646445ae0629791ec463ade0af6cc6a3c163",
+      "serverId": "44769751-fbfc-497d-9c9a-4bb318a4117c",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0fd801bd_f742198d",
+        "filename": "prebuilt/common/etc/sensitive_pn.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1000063
+      },
+      "writtenOn": "2018-02-01T14:11:01Z",
+      "side": 1,
+      "message": "guess you could call the holebi line sensitive :)",
+      "revId": "9d0b646445ae0629791ec463ade0af6cc6a3c163",
+      "serverId": "44769751-fbfc-497d-9c9a-4bb318a4117c",
+      "unresolved": false
+    }
+  ]
+}
