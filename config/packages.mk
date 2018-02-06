@@ -1,6 +1,7 @@
 # Required packages
 PRODUCT_PACKAGES += \
     Gallery2 \
+    Jelly \
     Launcher3 \
     LiveWallpapers \
     LiveWallpapersPicker \
