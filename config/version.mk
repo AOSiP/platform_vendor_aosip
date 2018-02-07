@@ -1,4 +1,4 @@
-# Copyright (C) 2016-2017 AOSiP
+# Copyright (C) 2016-2018 AOSiP
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,7 +14,7 @@
 
 # Versioning System
 PRODUCT_VERSION_MAJOR = 8
-PRODUCT_VERSION_MINOR = 1
+PRODUCT_VERSION_MINOR = 2
 
 AOSIP_BUILDTYPE ?= Derp
 
