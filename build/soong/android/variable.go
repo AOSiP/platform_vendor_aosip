@@ -47,6 +47,9 @@ type Product_variables struct {
 	Uses_qcom_bsp_legacy struct {
 		Cppflags []string
 	}
+	Target_shim_libs struct {
+		Cppflags []string
+	}
 }
 
 type ProductVariables struct {
@@ -69,4 +72,5 @@ type ProductVariables struct {
 	Qti_flac_decoder        *bool `json:",omitempty"`
 	Use_legacy_rescaling    *bool `json:",omitempty"`
 	Uses_qcom_bsp_legacy  *bool `json:",omitempty"`
+	Target_shim_libs  *string `json:",omitempty"`
 }
