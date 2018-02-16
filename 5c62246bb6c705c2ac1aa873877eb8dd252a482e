@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8ca53979_f8ffdcbc",
+        "filename": "aosip.devices",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2018-02-16T18:55:32Z",
+      "side": 1,
+      "message": "Before zl1 please",
+      "revId": "5c62246bb6c705c2ac1aa873877eb8dd252a482e",
+      "serverId": "44769751-fbfc-497d-9c9a-4bb318a4117c",
+      "unresolved": false
+    }
+  ]
+}
