@@ -64,6 +64,11 @@ PRODUCT_COPY_FILES +=  \
 PRODUCT_COPY_FILES += \
     vendor/aosip/prebuilt/common/bin/clean_cache.sh:system/bin/clean_cache.sh
 
+# exFAT tools
+PRODUCT_PACKAGES += \
+    fsck.exfat \
+    mkfs.exfat
+
 # Media
 PRODUCT_GENERIC_PROPERTIES += \
     media.recorder.show_manufacturer_and_model=true
