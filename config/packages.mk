@@ -38,10 +38,32 @@ PRODUCT_PACKAGES += \
 
 # Extra tools
 PRODUCT_PACKAGES += \
-    openvpn \
+    7z \
+    bash \
+    bzip2 \
+    curl \
     e2fsck \
+    fsck.ntfs \
+    gdbserver \
+    htop \
+    lib7z \
+    libsepol \
+    micro_bench \
     mke2fs \
-    tune2fs
+    mkfs.ntfs \
+    mount.ntfs \
+    openvpn \
+    oprofiled \
+    pigz \
+    powertop \
+    sqlite3 \
+    strace \
+    tune2fs \
+    unrar \
+    unzip \
+    vim \
+    wget \
+    zip
 
 # Include librsjni explicitly to workaround GMS issue
 PRODUCT_PACKAGES += \
