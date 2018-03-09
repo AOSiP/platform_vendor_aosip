@@ -17,6 +17,7 @@ PRODUCT_PACKAGES += \
     SettingsDark \
     SettingsIntelligenceDark \
     SystemDark \
+    UpdaterDark \
     WellbeingDark
 
 # BlackAF Theme
@@ -24,4 +25,5 @@ PRODUCT_PACKAGES += \
     GBoardBlackAF \
     SettingsBlackAF \
     SystemBlackAF \
-    SettingsIntelligenceBlackAF
+    SettingsIntelligenceBlackAF \
+    UpdaterBlackAF
