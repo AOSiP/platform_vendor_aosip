@@ -6,7 +6,8 @@ PRODUCT_PACKAGES += \
     LiveWallpapers \
     LiveWallpapersPicker \
     messaging \
-    Turbo
+    Turbo \
+    Updater
 
 ifeq ($(AOSIP_BUILDTYPE), Official)
     PRODUCT_PACKAGES += \
