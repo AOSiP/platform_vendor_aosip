@@ -6,12 +6,8 @@ PRODUCT_PACKAGES += \
     LiveWallpapers \
     LiveWallpapersPicker \
     messaging \
-    Turbo
-
-ifeq ($(AOSIP_BUILDTYPE), Official)
-    PRODUCT_PACKAGES += \
-        Updater
-endif
+    Turbo \
+    Updater
 
 # Overlays
 PRODUCT_PACKAGES += \
@@ -38,7 +34,6 @@ PRODUCT_PACKAGES += \
     SettingsDark \
     SystemDark \
     TealAccent \
-    UpdaterDark \
     YellowAccent \
     WhiteAccent
 
