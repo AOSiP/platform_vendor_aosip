@@ -51,10 +51,18 @@
                     android:textSize="12sp" />
 
                 <TextView
-                    android:id="@+id/header_build_version"
+                    android:id="@+id/header_device_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/header_build_date"
+                    android:textColor="@color/white"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/header_build_version"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/header_device_name"
                     android:textColor="@color/white"
                     android:textSize="12sp" />
 
