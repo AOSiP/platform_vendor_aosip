@@ -5,3 +5,11 @@ PRODUCT_PACKAGES += \
     SettingsDark \
     SettingsIntelligenceDark \
     SystemDark
+
+# BlackAF Theme
+PRODUCT_PACKAGES += \
+    GBoardBlackAF \
+    SettingsBlackAF \
+    SystemBlackAF \
+    SettingsIntelligenceBlackAF
+
