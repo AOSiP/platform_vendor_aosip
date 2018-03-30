@@ -4,4 +4,19 @@ PRODUCT_PACKAGES += \
     GBoardLight \
     SettingsDark \
     SettingsIntelligenceDark \
-    SystemDark
+    SystemDark \
+    UserOne \
+    UserTwo \
+    UserThree \
+    UserFour \
+    UserFive \
+    UserSix \
+    UserSeven
+
+# BlackAF Theme
+PRODUCT_PACKAGES += \
+    GBoardBlackAF \
+    SettingsBlackAF \
+    SystemBlackAF \
+    SettingsIntelligenceBlackAF
+
