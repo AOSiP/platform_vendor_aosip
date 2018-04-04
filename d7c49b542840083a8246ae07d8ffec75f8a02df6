@@ -1,0 +1,90 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "02dbf720_76d4618e",
+        "filename": "config/packages.mk",
+        "patchSetId": 8
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1000044
+      },
+      "writtenOn": "2018-04-04T08:54:11Z",
+      "side": 1,
+      "message": "Typo\u0027d there",
+      "revId": "d7c49b542840083a8246ae07d8ffec75f8a02df6",
+      "serverId": "44769751-fbfc-497d-9c9a-4bb318a4117c",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "569c321e_5561abe7",
+        "filename": "themes/BlackAF/DuiDialogs/res/values-fr/strings.xml",
+        "patchSetId": 8
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000044
+      },
+      "writtenOn": "2018-04-04T08:54:11Z",
+      "side": 1,
+      "message": "Let localisations be handled by crowdin translators",
+      "parentUuid": "",
+      "revId": "d7c49b542840083a8246ae07d8ffec75f8a02df6",
+      "serverId": "44769751-fbfc-497d-9c9a-4bb318a4117c",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f38854dd_1d35b3b3",
+        "filename": "themes/BlackAF/Settings/res/values-fr/strings.xml",
+        "patchSetId": 8
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000044
+      },
+      "writtenOn": "2018-04-04T08:54:11Z",
+      "side": 1,
+      "message": "Let localisations be handled via crowdin translators",
+      "revId": "d7c49b542840083a8246ae07d8ffec75f8a02df6",
+      "serverId": "44769751-fbfc-497d-9c9a-4bb318a4117c",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "38abc9d2_f87ff40b",
+        "filename": "themes/BlackAF/System/res/values-fr/strings.xml",
+        "patchSetId": 8
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000044
+      },
+      "writtenOn": "2018-04-04T08:54:11Z",
+      "side": 1,
+      "message": "Let localisations be handled by crowdin translators",
+      "revId": "d7c49b542840083a8246ae07d8ffec75f8a02df6",
+      "serverId": "44769751-fbfc-497d-9c9a-4bb318a4117c",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "39f5166e_8ffeabd5",
+        "filename": "themes/BlackAF/Updater/res/values-fr/strings.xml",
+        "patchSetId": 8
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000044
+      },
+      "writtenOn": "2018-04-04T08:54:11Z",
+      "side": 1,
+      "message": "Let localisations be handled by crowdin translators",
+      "revId": "d7c49b542840083a8246ae07d8ffec75f8a02df6",
+      "serverId": "44769751-fbfc-497d-9c9a-4bb318a4117c",
+      "unresolved": false
+    }
+  ]
+}
