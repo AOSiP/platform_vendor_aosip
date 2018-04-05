@@ -1,0 +1,22 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c66a7ade_69fdc398",
+        "filename": "themes/Dark/Settings/res/values/colors.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1000044
+      },
+      "writtenOn": "2018-04-05T09:06:35Z",
+      "side": 1,
+      "message": "I think you\u0027re better off linking it to white like all the other text, accent will look off IMO. Also this will need to be rebased to duplicate the changes to the Black theme.",
+      "parentUuid": "",
+      "revId": "5171556186f15b9d413d1de0ee8ef9228fb52a10",
+      "serverId": "44769751-fbfc-497d-9c9a-4bb318a4117c",
+      "unresolved": false
+    }
+  ]
+}
