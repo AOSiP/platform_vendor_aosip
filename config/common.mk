@@ -39,11 +39,6 @@ PRODUCT_COPY_FILES += \
     vendor/aosip/prebuilt/common/lib/libjni_latinimegoogle.so:system/lib/libjni_latinimegoogle.so
 endif
 
-ifneq ($(TARGET_BUILD_VARIANT),eng)
-# Enable ADB authentication
-PRODUCT_GENERIC_PROPERTIES += ro.adb.secure=1
-endif
-
 # Backup Tool
 PRODUCT_COPY_FILES += \
     vendor/aosip/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
