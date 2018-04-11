@@ -43,7 +43,7 @@ PRODUCT_PACKAGES += \
     GBoardDark \
     SettingsDark \
     SystemDark \
-    UpdaterDark \
+    UpdaterDark
 
 # BlackAF Theme
 PRODUCT_PACKAGES += \
@@ -51,7 +51,7 @@ PRODUCT_PACKAGES += \
     GBoardBlackAF \
     SettingsBlackAF \
     SystemBlackAF \
-    UpdaterBlackAF \
+    UpdaterBlackAF
 
 # Extra tools
 PRODUCT_PACKAGES += \
