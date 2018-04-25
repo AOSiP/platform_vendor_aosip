@@ -55,4 +55,7 @@
     <color name="toast_bg_color">@*android:color/background_material_dark</color>
     <color name="toast_text_color">@android:color/white</color>
 
+    <!-- QS VPN background color -->
+    <color name="quick_settings_footer_background_color">@*android:color/background_material_dark</color>
+
 </resources>
