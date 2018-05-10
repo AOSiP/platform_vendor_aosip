@@ -2,5 +2,4 @@
 <resources>
     <dimen name="notification_divider_height">0dp</dimen>
     <dimen name="z_distance_between_notifications">0dp</dimen>
-    <dimen name="qs_corner_content_padding">0dp</dimen>
 </resources>
