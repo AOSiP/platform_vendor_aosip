@@ -53,6 +53,10 @@ PRODUCT_PACKAGES += \
     SystemBlackAF \
     UpdaterBlackAF
 
+# Analog clocks
+PRODUCT_PACKAGES += \
+    AnalogDeadpool
+
 # Extra tools
 PRODUCT_PACKAGES += \
     7z \
