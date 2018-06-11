@@ -55,7 +55,8 @@ PRODUCT_PACKAGES += \
 
 # Analog clocks
 PRODUCT_PACKAGES += \
-    AnalogDeadpool
+    AnalogDeadpool \
+    AnalogDeepNight
 
 # Extra tools
 PRODUCT_PACKAGES += \
