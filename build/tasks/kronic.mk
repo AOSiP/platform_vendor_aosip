@@ -1,6 +1,6 @@
 AOSIP_TARGET_PACKAGE := $(PRODUCT_OUT)/AOSiP-$(AOSIP_VERSION).zip
 
-.PHONY: otapackage kronic
+.PHONY: otapackage kronic bacon
 otapackage: $(INTERNAL_OTA_PACKAGE_TARGET)
 kronic: otapackage
 	$(hide) ln -f $(INTERNAL_OTA_PACKAGE_TARGET) $(AOSIP_TARGET_PACKAGE)
@@ -19,3 +19,4 @@ kronic: otapackage
 	@echo -e ${CL_MAG}"size:"${CL_CYN}" `ls -lah $(AOSIP_TARGET_PACKAGE) | cut -d ' ' -f 5`"${CL_RST}
 	@echo -e ""
 
+bacon: kronic
