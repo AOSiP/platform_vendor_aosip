@@ -1,62 +1,16 @@
 # Required packages
 PRODUCT_PACKAGES += \
     Gallery2 \
-    Jelly \
     Launcher3 \
     LiveWallpapers \
     LiveWallpapersPicker \
     messaging \
     Turbo
 
-ifeq ($(AOSIP_BUILDTYPE), Official)
-    PRODUCT_PACKAGES += \
-        Updater
-endif
-
-# Accents
-PRODUCT_PACKAGES += \
-    AmberAccent \
-    BlackAccent \
-    BlueAccent \
-    BlueGreyAccent \
-    BrownAccent \
-    CyanAccent \
-    DeepOrangeAccent \
-    DeepPurpleAccent \
-    GreenAccent \
-    GreyAccent \
-    IndigoAccent \
-    LightBlueAccent \
-    LightGreenAccent \
-    LimeAccent \
-    OrangeAccent \
-    PinkAccent \
-    PurpleAccent \
-    RedAccent \
-    TealAccent \
-    YellowAccent \
-    WhiteAccent
-
-# Dark Theme
-PRODUCT_PACKAGES += \
-    DuiDark \
-    GBoardDark \
-    SettingsDark \
-    SystemDark \
-    UpdaterDark
-
-# BlackAF Theme
-PRODUCT_PACKAGES += \
-    DuiBlackAF \
-    GBoardBlackAF \
-    SettingsBlackAF \
-    SystemBlackAF \
-    UpdaterBlackAF
-
-# Analog clocks
-PRODUCT_PACKAGES += \
-    AnalogDeadpool \
-    AnalogDeepNight
+#ifeq ($(AOSIP_BUILDTYPE), Official)
+#    PRODUCT_PACKAGES += \
+#        Updater
+#endif
 
 # Extra tools
 PRODUCT_PACKAGES += \
@@ -106,10 +60,3 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libprotobuf-cpp-full \
     librsjni
-
-# DU Utils Library
-PRODUCT_PACKAGES += \
-    org.dirtyunicorns.utils
-
-PRODUCT_BOOT_JARS += \
-    org.dirtyunicorns.utils
