@@ -40,10 +40,10 @@ PRODUCT_COPY_FILES += \
 endif
 
 # Backup Tool
-PRODUCT_COPY_FILES += \
-    vendor/aosip/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
-    vendor/aosip/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions \
-    vendor/aosip/prebuilt/common/bin/50-base.sh:system/addon.d/50-base.sh \
+#PRODUCT_COPY_FILES += \
+#    vendor/aosip/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
+#    vendor/aosip/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions \
+#    vendor/aosip/prebuilt/common/bin/50-base.sh:system/addon.d/50-base.sh \
 
 PRODUCT_COPY_FILES += \
     vendor/aosip/prebuilt/common/etc/init.d/00banner:system/etc/init.d/00banner \
@@ -58,12 +58,12 @@ $(foreach f,$(wildcard vendor/aosip/prebuilt/common/etc/init/*.rc),\
 	$(eval PRODUCT_COPY_FILES += $(f):system/etc/init/$(notdir $f)))
 
 # Fix Dialer
-PRODUCT_COPY_FILES +=  \
-    vendor/aosip/prebuilt/common/sysconfig/dialer_experience.xml:system/etc/sysconfig/dialer_experience.xml
+#PRODUCT_COPY_FILES +=  \
+#    vendor/aosip/prebuilt/common/sysconfig/dialer_experience.xml:system/etc/sysconfig/dialer_experience.xml
 
 # Clean up packages cache to avoid wrong strings and resources
-PRODUCT_COPY_FILES += \
-    vendor/aosip/prebuilt/common/bin/clean_cache.sh:system/bin/clean_cache.sh
+#PRODUCT_COPY_FILES += \
+#    vendor/aosip/prebuilt/common/bin/clean_cache.sh:system/bin/clean_cache.sh
 
 # Storage manager
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
@@ -74,9 +74,9 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     media.recorder.show_manufacturer_and_model=true
 
 # Set custom volume steps
-PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
-    ro.config.media_vol_steps=30 \
-    ro.config.bt_sco_vol_steps=30
+#PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+#    ro.config.media_vol_steps=30 \
+#    ro.config.bt_sco_vol_steps=30
 
 # Disable Rescue Party
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
@@ -90,12 +90,12 @@ PRODUCT_PACKAGES += \
 EXCLUDE_SYSTEMUI_TESTS := true
 
 # exFAT tools
-PRODUCT_PACKAGES += \
-    fsck.exfat \
-    mkfs.exfat
+#PRODUCT_PACKAGES += \
+#    fsck.exfat \
+#    mkfs.exfat
 
 # Common overlay
-PRODUCT_PACKAGE_OVERLAYS += vendor/aosip/overlay/common
+#PRODUCT_PACKAGE_OVERLAYS += vendor/aosip/overlay/common
 
 # Bootanimation
 include vendor/aosip/config/bootanimation.mk
