@@ -94,6 +94,11 @@ PRODUCT_PACKAGES += \
     fsck.exfat \
     mkfs.exfat
 
+# Default notification/alarm sounds
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+    ro.config.notification_sound=Argon.ogg \
+    ro.config.alarm_alert=Hassium.ogg
+
 # Common overlay
 PRODUCT_PACKAGE_OVERLAYS += vendor/aosip/overlay/common
 
