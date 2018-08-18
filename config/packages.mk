@@ -5,7 +5,8 @@ PRODUCT_PACKAGES += \
     Launcher3 \
     LiveWallpapers \
     LiveWallpapersPicker \
-    messaging
+    messaging \
+    WellbeingPrebuilt
 
 #ifeq ($(AOSIP_BUILDTYPE), Official)
 #    PRODUCT_PACKAGES += \
