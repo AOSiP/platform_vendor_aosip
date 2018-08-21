@@ -34,8 +34,8 @@
     <color name="updater_snackbar_text_color">@android:color/black</color>
 
     <!-- Auto fill -->
-    <color name="autofill_save_title_color">@android:color/black</color>
-    <color name="autofill_autofill_save_custom_subtitle_color">@android:color/black</color>
+    <color name="autofill_save_title_color">@android:color/white</color>
+    <color name="autofill_autofill_save_custom_subtitle_color">@android:color/white</color>
 
     <!-- Color Constants -->
     <color name="theme_text1">#ffe5e5e5</color> <!-- text primary -->
