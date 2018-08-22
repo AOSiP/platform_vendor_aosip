@@ -5,13 +5,17 @@ PRODUCT_PACKAGES += \
     Launcher3 \
     LiveWallpapers \
     LiveWallpapersPicker \
-    messaging \
-    Turbo
+    messaging
 
 #ifeq ($(AOSIP_BUILDTYPE), Official)
 #    PRODUCT_PACKAGES += \
 #        Updater
 #endif
+
+# Turbo
+PRODUCT_PACKAGES += \
+    Turbo \
+    turbo.xml
 
 # Filesystems tools
 PRODUCT_PACKAGES += \
