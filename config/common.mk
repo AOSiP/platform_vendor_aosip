@@ -58,12 +58,12 @@ $(foreach f,$(wildcard vendor/aosip/prebuilt/common/etc/init/*.rc),\
 	$(eval PRODUCT_COPY_FILES += $(f):system/etc/init/$(notdir $f)))
 
 # Fix Dialer
-#PRODUCT_COPY_FILES +=  \
-#    vendor/aosip/prebuilt/common/sysconfig/dialer_experience.xml:system/etc/sysconfig/dialer_experience.xml
+PRODUCT_COPY_FILES +=  \
+    vendor/aosip/prebuilt/common/sysconfig/dialer_experience.xml:system/etc/sysconfig/dialer_experience.xml
 
 # Clean up packages cache to avoid wrong strings and resources
-#PRODUCT_COPY_FILES += \
-#    vendor/aosip/prebuilt/common/bin/clean_cache.sh:system/bin/clean_cache.sh
+PRODUCT_COPY_FILES += \
+    vendor/aosip/prebuilt/common/bin/clean_cache.sh:system/bin/clean_cache.sh
 
 # Storage manager
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
@@ -95,7 +95,7 @@ PRODUCT_PACKAGES += \
     mkfs.exfat
 
 # Common overlay
-#PRODUCT_PACKAGE_OVERLAYS += vendor/aosip/overlay/common
+PRODUCT_PACKAGE_OVERLAYS += vendor/aosip/overlay/common
 
 # Bootanimation
 include vendor/aosip/config/bootanimation.mk
