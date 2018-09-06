@@ -2,8 +2,8 @@
 $(call inherit-product, vendor/aosip/config/common.mk)
 
 # World APN list
-PRODUCT_COPY_FILES += \
-    vendor/aosip/prebuilt/common/etc/apns-conf.xml:system/etc/apns-conf.xml
+PRODUCT_PACKAGES += \
+    apns-conf.xml
 
 # World SPN overrides list
 PRODUCT_COPY_FILES += \
