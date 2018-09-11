@@ -37,7 +37,11 @@ import android.os.SystemProperties;
 import android.view.IWindowManager;
 import android.view.WindowManagerGlobal;
 
+<<<<<<< HEAD
 import com.aosip.support.R;
+=======
+import com.android.internal.R;
+>>>>>>> 0944f42... aosipUtils: Add method to turn off the screen
 
 import java.util.Locale;
 
@@ -138,5 +142,12 @@ public class aosipUtils {
     public static boolean isChineseLanguage() {
        return Resources.getSystem().getConfiguration().locale.getLanguage().startsWith(
                Locale.CHINESE.getLanguage());
+    }
+    // Method to turn off the screen
+    public static void switchScreenOff(Context ctx) {
+        PowerManager pm = (PowerManager) ctx.getSystemService(Context.POWER_SERVICE);
+        if (pm!= null) {
+            pm.goToSleep(SystemClock.uptimeMillis());
+        }
     }
 }
