@@ -78,6 +78,11 @@ TARGET_AUTO_KDIR := $(shell echo $(TARGET_DEVICE_DIR) | sed -e 's/^device/kernel
 # kernel location - optional, defaults to kernel/<vendor>/<device>
 TARGET_KERNEL_SOURCE ?= $(TARGET_AUTO_KDIR)
 KERNEL_SRC := $(TARGET_KERNEL_SOURCE)
+
+# Soong namespace
+# Add kernel source dir to our soong namespace, so as to avoid conflicts incase things like headers for qseecom are defined in multiple source's blueprints
+PRODUCT_SOONG_NAMESPACES += $(TARGET_KERNEL_SOURCE)
+
 # kernel configuration - mandatory
 KERNEL_DEFCONFIG := $(TARGET_KERNEL_CONFIG)
 VARIANT_DEFCONFIG := $(TARGET_KERNEL_VARIANT_CONFIG)
