@@ -17,15 +17,19 @@ PRODUCT_VERSION_MAJOR = 9
 PRODUCT_VERSION_MINOR = 0
 
 DATE := $(shell date +%Y%m%d)
+TARGET_PRODUCT_SHORT := $(subst aosip_,,$(AOSIP_BUILDTYPE))
 
 AOSIP_BUILDTYPE ?= Pizza
 AOSIP_BUILD_VERSION := $(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR)
 AOSIP_VERSION := $(AOSIP_BUILD_VERSION)-$(AOSIP_BUILDTYPE)-$(AOSIP_BUILD)-$(DATE)
+ROM_FINGERPRINT := AOSiP/$(PLATFORM_VERSION)/$(TARGET_PRODUCT_SHORT)/$(shell date +%Y%m%d)
 
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
   ro.aosip.build.version=$(AOSIP_BUILD_VERSION) \
   ro.aosip.build.date=$(DATE) \
   ro.aosip.buildtype=$(AOSIP_BUILDTYPE) \
+  ro.aosip.fingerprint=$(ROM_FINGERPRINT) \
   ro.aosip.version=$(AOSIP_VERSION) \
   ro.aosip.device=$(AOSIP_BUILD) \
   ro.modversion=$(AOSIP_VERSION)
+
