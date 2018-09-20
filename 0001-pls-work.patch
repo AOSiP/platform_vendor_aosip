@@ -1,0 +1,26 @@
+From 2d75b60ede4cd4a3de28ed21d7dec231433768e2 Mon Sep 17 00:00:00 2001
+From: Harsh Shandilya <harsh@prjkt.io>
+Date: Sat, 6 Oct 2018 20:39:39 +0530
+Subject: [PATCH 1/1] pls work
+
+Change-Id: I78f844954b0de3f9f99bf8cc6e868e692b6e608e
+Signed-off-by: Harsh Shandilya <harsh@prjkt.io>
+---
+ build/tasks/kernel.mk | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/build/tasks/kernel.mk b/build/tasks/kernel.mk
+index 992d61511717..9279e40fbc2a 100644
+--- a/build/tasks/kernel.mk
++++ b/build/tasks/kernel.mk
+@@ -14,6 +14,7 @@
+ # limitations under the License.
+ 
+ # Kernel variables are configured in vendor/aosip/config/BoardConfigKernel.mk
++include vendor/aosip/config/BoardConfigKernel.mk
+ 
+ ifneq ($(TARGET_NO_KERNEL),true)
+ 
+-- 
+2.17.1
+
