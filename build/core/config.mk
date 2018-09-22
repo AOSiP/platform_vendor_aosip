@@ -20,6 +20,3 @@ endif
 
 # Rules for MTK targets
 include $(TOPDIR)vendor/aosip/build/core/mtk_target.mk
-
-# Rules for QCOM targets
-include $(TOPDIR)vendor/aosip/build/core/qcom_target.mk
