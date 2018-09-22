@@ -18,7 +18,4 @@ ifneq ($(TARGET_BUILD_VARIANT),user)
 SELINUX_IGNORE_NEVERALLOWS := true
 endif
 
-# Rules for QCOM targets
-include $(TOPDIR)vendor/aosip/build/core/qcom_target.mk
-
 BUILD_RRO_SYSTEM_PACKAGE := $(TOP)/vendor/aosip/build/core/system_rro.mk
