@@ -5,3 +5,5 @@ include vendor/aosip/config/BoardConfigQcom.mk
 endif
 
 include vendor/aosip/config/BoardConfigSoong.mk
+
+PRODUCT_SOONG_NAMESPACES += $(PATHMAP_SOONG_NAMESPACES)
