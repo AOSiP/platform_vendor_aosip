@@ -15,8 +15,8 @@ kronic: otapackage
 	@echo -e ${CL_GRN}"            ▀  ▀  ▀█▄▀▪ ▀▀▀▀ ▀▀▀.▀             "
 	@echo -e ""
 	@echo -e "zip: "$(AOSIP_TARGET_PACKAGE)
-	@echo -e "md5: `cat $(AOSIP_TARGET_PACKAGE).md5sum | cut -d ' ' -f 1`"
-	@echo -e "size:`ls -lah $(AOSIP_TARGET_PACKAGE) | cut -d ' ' -f 5`"
+	@echo -e "md5: $(cat $(AOSIP_TARGET_PACKAGE).md5sum | awk '{print $1}')"
+	@echo -e "size: $(du -sh $(AOSIP_TARGET_PACKAGE))"
 	@echo -e ""
 
 bacon: kronic
