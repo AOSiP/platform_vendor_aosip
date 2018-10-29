@@ -104,3 +104,6 @@ include vendor/aosip/config/packages.mk
 
 # Versioning
 include vendor/aosip/config/version.mk
+
+# Weather
+include vendor/aosip/config/weather.mk
