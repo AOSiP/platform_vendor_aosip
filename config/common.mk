@@ -110,3 +110,6 @@ include vendor/aosip/config/accents.mk
 
 # Themes
 include vendor/aosip/config/themes.mk
+
+# Weather
+include vendor/aosip/config/weather.mk
