@@ -101,6 +101,9 @@ PRODUCT_PACKAGES += \
 # Common overlay
 PRODUCT_PACKAGE_OVERLAYS += vendor/aosip/overlay/common
 
+# Pixel sounds
+include frameworks/base/data/sounds/GoogleAudio.mk
+
 # Bootanimation
 include vendor/aosip/config/bootanimation.mk
 
