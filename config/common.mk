@@ -93,11 +93,6 @@ PRODUCT_PACKAGES += \
 # Don't compile SystemUITests
 EXCLUDE_SYSTEMUI_TESTS := true
 
-# exFAT tools
-PRODUCT_PACKAGES += \
-    fsck.exfat \
-    mkfs.exfat
-
 # Common overlay
 PRODUCT_PACKAGE_OVERLAYS += vendor/aosip/overlay/common
 
