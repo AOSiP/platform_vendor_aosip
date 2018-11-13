@@ -32,3 +32,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libprotobuf-cpp-full \
     librsjni
+
+#fonts
+PRODUCT_PACKAGES += \
+    DU-Fonts
