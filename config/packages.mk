@@ -12,6 +12,10 @@ PRODUCT_PACKAGES += \
     WeatherClient \
     Updater
 
+# Subs key
+PRODUCT_PACKAGES += \
+    SubstratumSignature
+
 # Filesystems tools
 PRODUCT_PACKAGES += \
     fsck.exfat \
