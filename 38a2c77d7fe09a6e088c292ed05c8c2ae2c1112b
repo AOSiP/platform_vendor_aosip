@@ -16,6 +16,24 @@
       "revId": "38a2c77d7fe09a6e088c292ed05c8c2ae2c1112b",
       "serverId": "44769751-fbfc-497d-9c9a-4bb318a4117c",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "09bdec4b_7601acfe",
+        "filename": "build/tasks/kronic.mk",
+        "patchSetId": 4
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2018-11-29T19:35:42Z",
+      "side": 1,
+      "message": "Need to for using stuff like `awk` in Makefile, or rekt af (Try without and confirm once, I can\u0027t remember the exact result but I remember that it didn\u0027t work :P)",
+      "parentUuid": "5176a909_b8fa6ae7",
+      "revId": "38a2c77d7fe09a6e088c292ed05c8c2ae2c1112b",
+      "serverId": "44769751-fbfc-497d-9c9a-4bb318a4117c",
+      "unresolved": true
     }
   ]
 }
