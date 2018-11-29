@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5176a909_b8fa6ae7",
+        "filename": "build/tasks/kronic.mk",
+        "patchSetId": 4
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000086
+      },
+      "writtenOn": "2018-11-29T19:23:42Z",
+      "side": 1,
+      "message": "$$ works? o.O",
+      "revId": "38a2c77d7fe09a6e088c292ed05c8c2ae2c1112b",
+      "serverId": "44769751-fbfc-497d-9c9a-4bb318a4117c",
+      "unresolved": true
+    }
+  ]
+}
