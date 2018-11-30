@@ -30,6 +30,8 @@
     <integer name="config_activityDefaultDur">110</integer>
 
     <string-array name="config_locationProviderPackageNames" translatable="false">
+        <!-- qcom provider -->
+        <item>com.qualcomm.location</item>
         <!-- The Google provider -->
         <item>com.google.android.gms</item>
         <!-- The standard AOSP fused location provider -->
