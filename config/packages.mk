@@ -1,5 +1,6 @@
 # Required packages
 PRODUCT_PACKAGES += \
+    CustomDoze \
     Gallery2 \
     LatinIME \
     Launcher3 \
