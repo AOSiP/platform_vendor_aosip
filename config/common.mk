@@ -13,6 +13,10 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.build.selinux=1 \
     ro.carrier=unknown
 
+# Allow tethering without provisioning app
+PRODUCT_PROPERTY_OVERRIDES += net.tethering.noprovisioning=true
+
+
 ifeq ($(PRODUCT_GMS_CLIENTID_BASE),)
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.com.google.clientidbase=android-google
