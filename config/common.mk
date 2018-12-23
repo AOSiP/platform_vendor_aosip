@@ -104,9 +104,3 @@ include vendor/aosip/config/packages.mk
 
 # Versioning
 include vendor/aosip/config/version.mk
-
-# Accents
-include vendor/aosip/config/accents.mk
-
-# Themes
-include vendor/aosip/config/themes.mk
