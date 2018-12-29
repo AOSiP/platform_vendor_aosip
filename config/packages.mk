@@ -6,6 +6,7 @@ PRODUCT_PACKAGES += \
     LiveWallpapers \
     LiveWallpapersPicker \
     messaging \
+    WeatherClient \
     WellbeingPrebuilt
 
 #ifeq ($(AOSIP_BUILDTYPE), Official)
