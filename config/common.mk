@@ -69,6 +69,11 @@ $(foreach f,$(wildcard vendor/aosip/prebuilt/common/etc/init/*.rc),\
 PRODUCT_COPY_FILES +=  \
     vendor/aosip/prebuilt/common/sysconfig/dialer_experience.xml:system/etc/sysconfig/dialer_experience.xml
 
+# Weather client
+PRODUCT_COPY_FILES += \
+    vendor/aosip/etc/permissions/org.pixelexperience.weather.client.xml:system/etc/permissions/org.pixelexperience.weather.client.xml \
+    vendor/aosip/etc/default-permissions/org.pixelexperience.weather.client.xml:system/etc/default-permissions/org.pixelexperience.weather.client.xml
+
 # Storage manager
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.storage_manager.enabled=true
@@ -110,6 +115,3 @@ include vendor/aosip/config/accents.mk
 
 # Themes
 include vendor/aosip/config/themes.mk
-
-# Weather
-include vendor/aosip/config/weather.mk
