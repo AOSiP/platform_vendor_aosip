@@ -69,6 +69,10 @@ $(foreach f,$(wildcard vendor/aosip/prebuilt/common/etc/init/*.rc),\
 PRODUCT_COPY_FILES +=  \
     vendor/aosip/prebuilt/common/sysconfig/dialer_experience.xml:system/etc/sysconfig/dialer_experience.xml
 
+# Power whitelist
+PRODUCT_COPY_FILES += \
+    vendor/aosip/config/permissions/aosip-power-whitelist.xml:system/etc/sysconfig/aosip-power-whitelist.xml
+
 # Weather client
 PRODUCT_COPY_FILES += \
     vendor/aosip/prebuilt/common/etc/permissions/org.pixelexperience.weather.client.xml:system/etc/permissions/org.pixelexperience.weather.client.xml \
