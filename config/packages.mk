@@ -9,10 +9,8 @@ PRODUCT_PACKAGES += \
     WeatherClient \
     WellbeingPrebuilt
 
-#ifeq ($(AOSIP_BUILDTYPE), Official)
-#    PRODUCT_PACKAGES += \
-#        Updater
-#endif
+PRODUCT_PACKAGES += \
+    Updater
 
 # Turbo
 PRODUCT_PACKAGES += \
