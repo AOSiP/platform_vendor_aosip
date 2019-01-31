@@ -14,9 +14,18 @@
      limitations under the License.
 -->
 
-<resources>
-<style name="DocumentsTheme">
-<item name="android:navigationBarColor">@color/navigationBarColor</item>
-<item name="android:windowLightNavigationBar">@bool/windowLightNavigationBar</item>
-</style>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <style name="ActionBarTheme" parent="@*android:style/ThemeOverlay.Material.Dark.ActionBar">
+        <item name="android:navigationBarColor">@color/navigation_bar_color</item>
+        <item name="android:windowLightNavigationBar">@bool/windowLightNavigationBar</item>
+    </style>
+
+    <style name="ActionBarPopupTheme" parent="@style/Theme.AppCompat.DayNight" />
+
+    <style name="DocumentsTheme" parent="@style/Theme.AppCompat.DayNight.DarkActionBar">
+        <item name="android:navigationBarColor">@color/navigation_bar_color</item>
+        <item name="android:windowLightNavigationBar">@bool/windowLightNavigationBar</item>
+    </style>
+
 </resources>
