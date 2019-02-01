@@ -6,7 +6,8 @@ PRODUCT_PACKAGES += \
     GoogleIntelligenceSenseLight \
     SettingsDark \
     SettingsIntelligenceDark \
-    SystemDark
+    SystemDark \
+    WellbeingDark
 
 # BlackAF Theme
 PRODUCT_PACKAGES += \
@@ -14,4 +15,3 @@ PRODUCT_PACKAGES += \
     SettingsBlackAF \
     SystemBlackAF \
     SettingsIntelligenceBlackAF
-
