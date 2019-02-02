@@ -69,9 +69,11 @@ $(foreach f,$(wildcard vendor/aosip/prebuilt/common/etc/init/*.rc),\
 PRODUCT_COPY_FILES +=  \
     vendor/aosip/prebuilt/common/sysconfig/dialer_experience.xml:system/etc/sysconfig/dialer_experience.xml
 
-# Power whitelist
+# Permissions
 PRODUCT_COPY_FILES += \
-    vendor/aosip/config/permissions/aosip-power-whitelist.xml:system/etc/sysconfig/aosip-power-whitelist.xml
+    vendor/aosip/config/permissions/aosip-power-whitelist.xml:system/etc/sysconfig/aosip-power-whitelist.xml \
+    vendor/aosip/config/permissions/aosip-privapp-permissions.xml:system/etc/permissions/aosip-privapp-permissions.xml
+
 
 # Weather client
 PRODUCT_COPY_FILES += \
