@@ -10,6 +10,7 @@ PRODUCT_PACKAGES += \
     WellbeingPrebuilt
 
 PRODUCT_PACKAGES += \
+    Changelog \
     Updater
 
 # Turbo
