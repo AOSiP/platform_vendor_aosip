@@ -7,6 +7,7 @@ PRODUCT_PACKAGES += \
     SettingsDark \
     SettingsIntelligenceDark \
     SystemDark \
+    SystemUiDark \
     UpdaterDark \
     WellbeingDark
 
