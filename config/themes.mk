@@ -16,5 +16,6 @@ PRODUCT_PACKAGES += \
     GBoardBlackAF \
     SettingsBlackAF \
     SystemBlackAF \
+    SystemUiBlackAF \
     SettingsIntelligenceBlackAF \
     UpdaterBlackAF
