@@ -6,17 +6,11 @@ PRODUCT_PACKAGES += \
     LiveWallpapers \
     LiveWallpapersPicker \
     messaging \
-    WeatherClient \
-    WellbeingPrebuilt
-
-PRODUCT_PACKAGES += \
-    Updater
-
-# Turbo
-PRODUCT_PACKAGES += \
-    Turbo \
+    TurboPrebuilt \
     turbo.xml \
-    privapp-permissions-turbo.xml
+    WeatherClient \
+    WellbeingPrebuilt \
+    Updater
 
 # Filesystems tools
 PRODUCT_PACKAGES += \

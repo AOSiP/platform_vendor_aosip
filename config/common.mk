@@ -72,8 +72,8 @@ PRODUCT_COPY_FILES +=  \
 # Permissions
 PRODUCT_COPY_FILES += \
     vendor/aosip/config/permissions/aosip-power-whitelist.xml:system/etc/sysconfig/aosip-power-whitelist.xml \
-    vendor/aosip/config/permissions/aosip-privapp-permissions.xml:system/etc/permissions/aosip-privapp-permissions.xml
-
+    vendor/aosip/config/permissions/aosip-privapp-permissions.xml:system/etc/permissions/aosip-privapp-permissions.xml \
+    vendor/aosip/config/permissions/privapp-permissions-turbo.xml:system/etc/sysconfig/privapp-permissions-turbo.xml
 
 # Weather client
 PRODUCT_COPY_FILES += \
