@@ -17,4 +17,5 @@ PRODUCT_PACKAGES += \
     SettingsBlackAF \
     SystemBlackAF \
     SettingsIntelligenceBlackAF \
-    UpdaterBlackAF
+    UpdaterBlackAF \
+    WellbeingBlackAF
