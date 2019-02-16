@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4742309b_d113e5d7",
+        "filename": "config/packages.mk",
+        "patchSetId": 4
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2019-02-16T19:48:35Z",
+      "side": 1,
+      "message": "Shouldn\u0027t need this now.",
+      "revId": "284b2b250f6f4e1032e443fc7072e91108b46b25",
+      "serverId": "44769751-fbfc-497d-9c9a-4bb318a4117c",
+      "unresolved": true
+    }
+  ]
+}
