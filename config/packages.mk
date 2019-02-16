@@ -14,7 +14,7 @@ PRODUCT_PACKAGES += \
 
 # Turbo
 PRODUCT_PACKAGES += \
-    Turbo \
+    TurboPrebuilt \
     turbo.xml \
     privapp-permissions-turbo.xml
 
