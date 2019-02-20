@@ -7,7 +7,6 @@ PRODUCT_PACKAGES += \
     LiveWallpapersPicker \
     messaging \
     TurboPrebuilt \
-    turbo.xml \
     WeatherClient \
     WellbeingPrebuilt \
     Updater

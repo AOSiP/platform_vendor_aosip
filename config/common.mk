@@ -65,20 +65,14 @@ PRODUCT_COPY_FILES += \
 $(foreach f,$(wildcard vendor/aosip/prebuilt/common/etc/init/*.rc),\
 	$(eval PRODUCT_COPY_FILES += $(f):system/etc/init/$(notdir $f)))
 
-# Fix Dialer
-PRODUCT_COPY_FILES +=  \
-    vendor/aosip/prebuilt/common/sysconfig/dialer_experience.xml:system/etc/sysconfig/dialer_experience.xml
-
-# Permissions
+# Configs
 PRODUCT_COPY_FILES += \
-    vendor/aosip/config/permissions/aosip-power-whitelist.xml:system/etc/sysconfig/aosip-power-whitelist.xml \
-    vendor/aosip/config/permissions/aosip-privapp-permissions.xml:system/etc/permissions/aosip-privapp-permissions.xml \
-    vendor/aosip/config/permissions/privapp-permissions-turbo.xml:system/etc/sysconfig/privapp-permissions-turbo.xml
-
-# Weather client
-PRODUCT_COPY_FILES += \
-    vendor/aosip/config/permissions/org.pixelexperience.weather.client.xml:system/etc/permissions/org.pixelexperience.weather.client.xml \
-    vendor/aosip/config/permissions/org.pixelexperience.weather.client-default.xml:system/etc/default-permissions/org.pixelexperience.weather.client.xml
+    vendor/aosip/prebuilt/common/etc/sysconfig/aosip-power-whitelist.xml:system/etc/sysconfig/aosip-power-whitelist.xml \
+    vendor/aosip/prebuilt/common/etc/sysconfig/aosip-privapp-permissions.xml:system/etc/permissions/aosip-privapp-permissions.xml \
+    vendor/aosip/prebuilt/common/etc/sysconfig/dialer_experience.xml:system/etc/sysconfig/dialer_experience.xml \
+    vendor/aosip/prebuilt/common/etc/sysconfig/turbo.xml:system/etc/sysconfig/turbo.xml \
+    vendor/aosip/prebuilt/common/etc/sysconfig/org.pixelexperience.weather.client.xml:system/etc/permissions/org.pixelexperience.weather.client.xml \
+    vendor/aosip/prebuilt/common/etc/sysconfig/org.pixelexperience.weather.client-default.xml:system/etc/default-permissions/org.pixelexperience.weather.client.xml
 
 # Do not include art debug targets
 PRODUCT_ART_TARGET_INCLUDE_DEBUG_BUILD := false
