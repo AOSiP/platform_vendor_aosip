@@ -28,4 +28,6 @@
     <string name="edit_hint">Value</string>
     <string name="seek_value_edit_label">Set value</string>
     <string name="ok">OK</string>
+    <string name="active_edge_app_select_title">Select app</string>
+    <string name="active_edge_activity_select_title">Select activity</string>
 </resources>
