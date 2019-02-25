@@ -18,13 +18,16 @@ package com.aosip.support.preference;
 
 import android.app.ListActivity;
 import android.content.Context;
+import android.content.pm.ActivityInfo;
 import android.content.pm.ApplicationInfo;
+import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -41,19 +44,29 @@ public class AppPicker extends ListActivity {
 
     protected PackageManager packageManager = null;
     protected List<ApplicationInfo> applist = null;
-    Adapter listadapter = null;
+    protected Adapter listadapter = null;
+
+    protected List<ActivityInfo> mActivitiesList = null;
+    protected boolean mIsActivitiesList = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(android.R.layout.list_content);
+        setTitle(R.string.active_edge_app_select_title);
 
         packageManager = getPackageManager();
         new LoadApplications().execute();
     }
 
     protected void onListItemClick(ListView l, View v, int position, long id) {
-        super.onListItemClick(l, v, position, id);
+        if (!mIsActivitiesList) {
+            // we are in the Apps list
+        } else if (mIsActivitiesList) {
+            // we are in the Activities list
+        }
+
+        mIsActivitiesList = false;
 
         finish();
     }
@@ -95,7 +108,7 @@ public class AppPicker extends ListActivity {
             applist = checkForLaunchIntent(packageManager.getInstalledApplications(
                     PackageManager.GET_META_DATA));
             listadapter = new Adapter(AppPicker.this,
-                    R.layout.app_list_item, applist);
+                    R.layout.app_list_item, applist, packageManager);
             return null;
         }
 
@@ -103,6 +116,16 @@ public class AppPicker extends ListActivity {
         protected void onPostExecute(Void result) {
             super.onPostExecute(result);
             setListAdapter(listadapter);
+
+            getListView().setLongClickable(true);
+            getListView().setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+                @Override
+                public boolean onItemLongClick(AdapterView<?> arg0, View arg1,
+                        int pos, long id) {
+                    onLongClick(pos);
+                    return true;
+                }
+            });
         }
 
         @Override
@@ -111,18 +134,50 @@ public class AppPicker extends ListActivity {
         }
     }
 
+    protected void onLongClick(int pos) {
+        /*if (mIsActivitiesList) return;
+        String packageName = applist.get(position).packageName;
+        showActivitiesDialog(packageName);*/
+    }
+
+    protected void showActivitiesDialog(String packageName) {
+        mIsActivitiesList = true;
+        ArrayList<ActivityInfo> list = null;
+        try {
+            PackageInfo pi = packageManager.getPackageInfo (
+                    packageName, PackageManager.GET_ACTIVITIES);
+
+            list = new ArrayList<>(Arrays.asList(pi.activities));
+
+        } catch (PackageManager.NameNotFoundException e) {
+        }
+
+        mActivitiesList = list;
+
+        if (list == null) {
+            // no activities to show, let's stay in the Apps list
+            mIsActivitiesList = false;
+            return;
+        }
+
+        setTitle(R.string.active_edge_activity_select_title);
+        // switch to a new adapter to show app activities
+        ActivitiesAdapter adapter = new ActivitiesAdapter(this, R.layout.app_list_item, list, packageManager);
+        setListAdapter(adapter);
+    }
+
     class Adapter extends ArrayAdapter<ApplicationInfo> {
 
         private List<ApplicationInfo> appList;
         private Context context;
         private PackageManager packageManager;
 
-        private Adapter(Context context, int resource, List<ApplicationInfo> objects) {
+        private Adapter(Context context, int resource, List<ApplicationInfo> objects, PackageManager pm) {
             super(context, resource, objects);
 
             this.context = context;
             this.appList = objects;
-            packageManager = context.getPackageManager();
+            packageManager = pm;
         }
 
         @Override
@@ -162,4 +217,60 @@ public class AppPicker extends ListActivity {
             return view;
         }
     }
+
+    class ActivitiesAdapter extends ArrayAdapter<ActivityInfo> {
+
+        private List<ActivityInfo> appList;
+        private Context context;
+        private PackageManager packageManager;
+
+        private ActivitiesAdapter(Context context, int resource, List<ActivityInfo> objects, PackageManager pm) {
+            super(context, resource, objects);
+
+            this.context = context;
+            this.appList = objects;
+            this.packageManager = pm;
+        }
+
+        @Override
+        public int getCount() {
+            return ((null != appList) ? appList.size() : 0);
+        }
+
+        @Override
+        public ActivityInfo getItem(int position) {
+            return ((null != appList) ? appList.get(position) : null);
+        }
+
+        @Override
+        public long getItemId(int position) {
+            return position;
+        }
+
+        @Override
+        public View getView(int position, View convertView, ViewGroup parent) {
+            View view = convertView;
+
+            ActivityInfo data = appList.get(position);
+
+            if (view == null) {
+                LayoutInflater layoutInflater = (LayoutInflater) context
+                        .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                view = layoutInflater.inflate(android.R.layout.simple_list_item_1, null);
+            }
+
+            if (data != null) {
+                TextView appName = view.findViewById(android.R.id.text1);
+
+                String name = /*data.loadLabel(packageManager).toString();
+                if (name == null) {
+                    name = */data.name;
+                //}
+                appName.setText(name);
+            }
+
+            return view;
+        }
+    }
 }
+
