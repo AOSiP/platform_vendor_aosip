@@ -1,4 +1,4 @@
-function hmm() {
+function __print_aosip_functions_help() {
 cat <<EOF
 Invoke ". build/envsetup.sh" from your shell to add the following functions to your environment:
 - lunch:     lunch <product_name>-<build_variant>
@@ -10,7 +10,7 @@ EOF
     local T=$(gettop)
     local A=""
     local i
-    for i in `cat $T/build/envsetup.sh | sed -n "/^[[:blank:]]*function /s/function \([a-z_]*\).*/\1/p" | sort | uniq`; do
+    for i in `cat $T/vendor/aosip/build/envsetup.sh | sed -n "/^[[:blank:]]*function /s/function \([a-z_]*\).*/\1/p" | sort | uniq`; do
       A="$A $i"
     done
     echo $A
@@ -65,16 +65,6 @@ function gerrit()
         fi
     fi
 }
-
-if [ "x$SHELL" != "x/bin/bash" ]; then
-    case `ps -o command -p $$` in
-        *bash*)
-            ;;
-        *)
-            echo "WARNING: Only bash is supported, use of other shell would lead to erroneous results"
-            ;;
-    esac
-fi
 
 # Make using all available CPUs
 function mka() {
