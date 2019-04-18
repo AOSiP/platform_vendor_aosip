@@ -1,21 +1,3 @@
-function hmm() {
-cat <<EOF
-Invoke ". build/envsetup.sh" from your shell to add the following functions to your environment:
-- lunch:     lunch <product_name>-<build_variant>
-- gerrit:    Adds a remote for AOSiP Gerrit
-
-
-Look at the source to view more functions. The complete list is:
-EOF
-    local T=$(gettop)
-    local A=""
-    local i
-    for i in `cat $T/build/envsetup.sh | sed -n "/^[[:blank:]]*function /s/function \([a-z_]*\).*/\1/p" | sort | uniq`; do
-      A="$A $i"
-    done
-    echo $A
-}
-
 function mk_timer()
 {
     local start_time=$(date +"%s")
@@ -65,16 +47,6 @@ function gerrit()
         fi
     fi
 }
-
-if [ "x$SHELL" != "x/bin/bash" ]; then
-    case `ps -o command -p $$` in
-        *bash*)
-            ;;
-        *)
-            echo "WARNING: Only bash is supported, use of other shell would lead to erroneous results"
-            ;;
-    esac
-fi
 
 # Make using all available CPUs
 function mka() {
