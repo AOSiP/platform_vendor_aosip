@@ -33,3 +33,7 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
   ro.aosip.device=$(AOSIP_BUILD) \
   ro.modversion=$(AOSIP_VERSION)
 
+ifneq ($(OVERRIDE_OTA_CHANNEL),)
+    PRODUCT_PROPERTY_OVERRIDES += \
+        aosip.updater.uri=$(OVERRIDE_OTA_CHANNEL)
+endif
