@@ -1,12 +1,19 @@
 # QS tile styles
 PRODUCT_PACKAGES += \
-    QStilesSquare \
-    QStilesRoundedSquare \
-    QStilesSquircle \
-    QStilesTearDrop \
-    QSTilesJustIcons \
-    QStilesCircleOutline \
-    QSTilesCircleGradient
+	QSTileSquircle \
+	QSTileTearDrop \
+	QSTileCircleDual \
+	QSTileCircleGradient \
+	QSTileInkdrop \
+	QSTileIconAccent \
+	QSTileShishuNights \
+	QSTileMemedoSquare \
+	QSTileWavey \
+	QSTileAttemptMountain \
+	QSTileDottedCircle \
+	QSTileNinja \
+	QSTilePokesign \
+	QSTileShishuInk
 
 # Themes
 PRODUCT_PACKAGES += \
