@@ -1,0 +1,94 @@
+An example thread is here: https://forum.xda-developers.com/oneplus-6/development/rom-android-source-illusion-project-t3970789
+
+===================================================================================================================================================================
+
+<BEGIN 1st POST>
+
+[CENTER][IMG="AOSIP"]https://img.xda-cdn.com/IZ8AJ2D1JHK6i7aEZHxW3YTq12s=/https%3A%2F%2Faosiprom.com%2F.graphics%2Fkronic2_222222-000000-2196f3.png[/IMG][/CENTER]
+[CENTER][CODE][B][CENTER]**** Disclaimer: I'm not responsible if you destroy your device. Use at your own risk!!! ****[/CENTER][/B][/CODE][/CENTER]
+[CENTER][SIZE="6"][B]Android Open Source illusion Project[/B][/SIZE][/CENTER]
+
+[CENTER][SIZE="5"][B]About us:[/B][/SIZE][/CENTER]
+[CENTER]AOSIP is a quality custom ROM based purely on AOSP. Twisted with the latest features and blended with stability. We strive for perfection and it shows.[/CENTER]
+
+[CENTER][SIZE="5"][B]Team Illusion:[/B][/SIZE][/CENTER]
+[CENTER]
+[URL="https://forum.xda-developers.com/member.php?u=2903821"]Josh Fox (xlxfoxxlx)[/URL]
+[URL="https://forum.xda-developers.com/member.php?u=5854483"]Akhil Narang[/URL]
+[URL="https://forum.xda-developers.com/member.php?u=6552280"]Harsh Shandilya[/URL]
+[URL="https://forum.xda-developers.com/member.php?u=7824313"]Anirudh Gupta[/URL]
+[/CENTER]
+
+[CENTER][B][SIZE="5"]Bug reporting:[/SIZE][/B]
+[HIDE]
+[LIST]
+[*]DO NOT Report bugs if you're running a custom kernel or you installed Xposed
+[*]Grab a logcat right after the problem has occurred. (Please include at least a few pages of the log, not just the last few lines, unless you know what you're doing.)
+[*]If it is a random reboot, grab dmesg . (Do not bother getting a logcat unless you can get it just before the reboot. A logcat after a reboot is useless)
+[*]If the problem disappears after running "setenforce 0" from a root shell, grab /data/misc/audit/audit.log
+[*]Remember to provide as much info as possible. The more info you provide, the more likely that the bug will be solved. Please also do not report known issues.
+[/LIST]
+[/HIDE][/CENTER]
+
+[CENTER][B][SIZE="5"]Source code:[/SIZE][/B]
+[HIDE]
+[URL="http://review.aosip.dev"]AOSiP Gerrit Review[/URL]
+[URL="https://github.com/AOSiP"]AOSiP Github[/URL]
+[URL="https://github.com/AOSiP-Devices/kernel_<manufacturer>_<codename>"]Kernel Source[/URL]
+[/HIDE][/CENTER]
+
+[CENTER][B][SIZE="5"][URL=https://aosip.dev]Latest Downloads[/URL]:[/SIZE][/B]
+[HIDE][SIZE="4"]
+[URL="https://aosip.dev/<codename>"]Official Server[/URL] | [URL="https://sourceforge.net/projects/illusionproject/files/<codename>/"]SourceForge Mirror[/URL]
+[/SIZE][/HIDE][/CENTER]
+
+[CENTER][B][SIZE="5"]Credit/Thanks:[/SIZE][/B]
+[HIDE]
+Mike Williams (founder and creator of AOSiP)
+Google for Android and AOSP
+LineageOS
+AICP
+ABC ROM
+AquariOS
+BootleggersROM
+Dirty Unicorns
+PixelExperience
+OmniROM
+CarbonROM
+nathanchance
+Cory Collins
+---------
+Any others we may have forgotten to credit
+And last but not the least, all our testers, who have helped us to squash many bugs so that we can try to release builds that as are flawless as possible[/CENTER][/HIDE]
+
+=========================================================================================================================================================================
+
+<BEGIN 2nd POST>
+
+[SIZE=5][U][B][COLOR="GREEN"]INSTALLATION PROCEDURE:[/COLOR][/B][/U][/SIZE]
+Have an unlocked bootloader, and TWRP installed/booted
+(Not gonna be explained here, there'll be threads in this forum somewhere)
+Wipe data and cache (don't report anything bugs if you dirty flashed over another ROM)
+Flash the ROM, GApps, Magisk, or any other mods (again, don't report bugs if you can't reproduce them with just ROM and GApps)
+Reboot into the system, and enjoy the illusion!
+
+[COLOR="CYAN"]KNOWN ISSUES:[/COLOR]
+< INSERT ISSUES >
+
+=========================================================================================================================================================================
+
+<BEGIN 3rd POST>
+
+[SIZE=5][B][U]Reporting Bugs[/B][/SIZE][/U]
+[LIST]
+[*] DO NOT Report bugs if you're running a custom kernel or you installed Xposed
+[*]Grab a [url=http://wiki.lineageos.org/logcat.html]logcat[/url] right after the problem has occurred. ([b]Please include at least a few pages of the log, not just the last few lines, unless you know what you're doing.[/b])
+[*]Include your firmware versions in reports.
+[*]Mention any and all Magisk modules you might be using along with the Magisk version
+[*]If it is a random reboot, grab dmesg . (Do not bother getting a logcat unless you can get it just before the reboot. A logcat after a reboot is useless)
+[*]If the problem disappears after running "setenforce 0" from a root shell, grab /data/misc/audit/audit.log
+[/LIST]
+Remember to provide as much info as possible. The more info you provide, the more likely that the bug will be solved. Please also do not report known issues.
+
+[SIZE=4][U][B][COLOR="AQUA"]FREQUENTLY ASKED QUESTIONS:[/COLOR][/B][/U][/SIZE]
+<INSERT DEVICE SPECIFIC INFO HERE>
