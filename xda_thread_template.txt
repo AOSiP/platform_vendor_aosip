@@ -1,0 +1,79 @@
+[CENTER][IMG="AOSIP"]https://img.xda-cdn.com/ZAQhLl2X0i-A19WIqR8BYhNSFsc=/http%3A%2F%2Fi.imgur.com%2FDr6rSI1.png[/IMG][/CENTER]
+
+[CENTER][CODE][B][CENTER]**** Disclaimer: I'm not responsible if you destroy your device. Use at your own risk!!! ****[/CENTER][/B][/CODE][/CENTER]
+
+[CENTER][SIZE="6"][B]Android Open Source illusion Project[/B][/SIZE][/CENTER]
+
+[CENTER][SIZE="5"][B]About us:[/B][/SIZE][/CENTER]
+
+[CENTER]AOSIP is a quality custom rom based purely on Google AOSP source since 6.0 release. Twisted with the latest features and blended with stability. We strive for perfection and it shows. [/CENTER]
+
+[CENTER][SIZE="5"][B]Team Illusion:[/B][/SIZE][/CENTER]
+
+[CENTER]Josh Fox (xlxfoxxlx)
+Akhil Narang
+Brett Montague
+Sri Harsha
+Harsh Shandilya
+[/CENTER]
+
+[CENTER][B][SIZE="5"]Bug reporting:[/SIZE][/B]
+[HIDE]
+[LIST]
+[*]DO NOT Report bugs if you're running a custom kernel or you installed Xposed
+[*]Grab a logcat right after the problem has occurred. (Please include at least a few pages of the log, not just the last few lines, unless you know what you're doing.)
+[*]If it is a random reboot, grab dmesg . (Do not bother getting a logcat unless you can get it just before the reboot. A logcat after a reboot is useless)
+[*]If the problem disappears after running "setenforce 0" from a root shell, grab /data/misc/audit/audit.log
+[*]Remember to provide as much info as possible. The more info you provide, the more likely that the bug will be solved. Please also do not report known issues.
+[/LIST]
+[/HIDE][/CENTER]
+
+[CENTER][B][SIZE="5"]Source code:[/SIZE][/B]
+
+[HIDE]
+[URL="http://review.aosiprom.com/#/q/status:open"]AOSiP Gerrit Review[/URL]
+[URL="https://github.com/AOSIP"]AOSiP Github[/URL]
+[URL="https://github.com/aosip-devices/kernel_google_bluecross"]Kernel source[/URL]
+[/HIDE][/CENTER]
+
+[CENTER][B][SIZE="5"]Latest Downloads:[/SIZE][/B]
+
+[HIDE][SIZE="4"]
+[URL="https://ota.aosiprom.com/blueline"]Blueline[/URL]
+[URL="https://ota.aosiprom.com/crosshatch"]Crosshatch[/URL]
+
+[SIZE="2"]Gapps are included.[/SIZE]
+[/SIZE][/HIDE][/CENTER]
+
+[CENTER][SIZE="5"][B]FAQ and Install instructions:[/B][/SIZE][/CENTER]
+
+[CENTER][HIDE]
+[U][SIZE="4"]Install instructions:[/SIZE][/U]
+getting twrp going is discussed many places so i wont do that here but assuming you have twrp installed
+boot twrp
+wipe system/data/cache
+flash rom
+flash [URL="https://dl.twrp.me/crosshatch/twrp-pixel3-installer-crosshatch-3.2.3-3.zip.html"]twrp installer[/URL]
+reboot system
+[/HIDE][/CENTER]
+
+[CENTER][SIZE="5"][B]Current Issues/Information:[/B][/SIZE][/CENTER]
+[CENTER][HIDE]
+
+* Tell me[/HIDE][/CENTER]
+
+[CENTER][B][SIZE="5"]Credit/Thanks:[/SIZE][/B]
+
+[HIDE]
+Mike Williams(founder and creator of AOSiP)
+Google
+LineageOS
+AICP
+ABC Rom
+BootleggersROM
+PE
+Omni
+Cory Collins
+---------
+Any others i may have forgotten
+All our testers[/CENTER][/HIDE]
