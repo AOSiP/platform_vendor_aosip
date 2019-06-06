@@ -7,9 +7,7 @@ PRODUCT_PACKAGES += \
     LiveWallpapers \
     LiveWallpapersPicker \
     messaging \
-    TurboPrebuilt \
     WeatherClient \
-    WellbeingPrebuilt \
     Updater
 
 # Filesystems tools
