@@ -104,9 +104,6 @@ PRODUCT_MINIMIZE_JAVA_DEBUG_INFO := true
 # Common overlay
 PRODUCT_PACKAGE_OVERLAYS += vendor/aosip/overlay/common
 
-# Accents
-include vendor/aosip/config/accents.mk
-
 # Bootanimation
 include vendor/aosip/config/bootanimation.mk
 
