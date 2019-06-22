@@ -4,6 +4,9 @@
 define uniq
 $(if $1,$(firstword $1) $(call uniq,$(filter-out $(firstword $1),$1)))
 endef
+ 
+# Include board/platform macros
+include vendor/aosip/build/core/utils.mk
 
-# Include QCOM macros
-include vendor/aosip/build/core/qcom_utils.mk
+# Include vendor platform definitions
+include vendor/aosip/build/core/vendor/*.mk
