@@ -3,16 +3,11 @@ PRODUCT_PACKAGES += \
 	QSTileSquircle \
 	QSTileTearDrop \
 	QSTileCircleDual \
-	QSTileCircleGradient \
 	QSTileInkdrop \
 	QSTileIconAccent \
 	QSTileShishuNights \
-	QSTileMemedoSquare \
-	QSTileWavey \
 	QSTileAttemptMountain \
 	QSTileDottedCircle \
-	QSTileNinja \
-	QSTilePokesign \
 	QSTileShishuInk
 
 # Themes
