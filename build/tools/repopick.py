@@ -285,7 +285,10 @@ if __name__ == '__main__':
                 return cmp(review_a['number'], review_b['number'])
 
     if not args.force:
-        query="status:open+topic:{}"
+        if args.gerrit[0:3] == 'ssh':
+            query="status:open topic:{}"
+        else"
+            query="status:open+topic:{}"
     else:
         query="topic:{}"
     if args.topic:
