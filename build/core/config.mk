@@ -18,6 +18,8 @@ ifneq ($(TARGET_BUILD_VARIANT),user)
 SELINUX_IGNORE_NEVERALLOWS := true
 endif
 
+USE_VR_FLINGER := true
+
 # Rules for QCOM targets
 include $(TOPDIR)vendor/aosip/build/core/qcom_target.mk
 
