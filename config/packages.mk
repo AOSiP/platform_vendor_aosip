@@ -7,6 +7,7 @@ PRODUCT_PACKAGES += \
     LiveWallpapers \
     LiveWallpapersPicker \
     messaging \
+    Recorder \
     SubstratumSignature \
     WeatherClient \
     Updater
