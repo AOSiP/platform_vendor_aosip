@@ -1,5 +1,6 @@
 # Required packages
 PRODUCT_PACKAGES += \
+    AudioFX \
     CustomDoze \
     Gallery2 \
     LatinIME \
