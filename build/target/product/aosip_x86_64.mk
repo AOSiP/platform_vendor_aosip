@@ -12,8 +12,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-$(call inherit-product, build/target/product/aosp_arm64.mk)
+$(call inherit-product, build/target/product/aosp_x86_64.mk)
 
 include vendor/aosip/build/target/product/aosip_generic_target.mk
 
-PRODUCT_NAME := aosip_arm64
+PRODUCT_NAME := aosip_x86_64

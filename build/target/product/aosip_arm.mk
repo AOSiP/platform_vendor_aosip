@@ -1,4 +1,4 @@
-# Copyright (C) 2018 The LineageOS Project
+# Copyright (C) 2018-2019 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -13,7 +13,8 @@
 # limitations under the License.
 
 $(call inherit-product, build/target/product/aosp_arm.mk)
-$(call inherit-product, vendor/aosip/config/common_full_phone.mk)
+
+include vendor/aosip/build/target/product/aosip_generic_target.mk
 
 TARGET_USES_64_BIT_BINDER := true
 
