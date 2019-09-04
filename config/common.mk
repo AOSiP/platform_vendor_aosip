@@ -28,10 +28,6 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.com.google.clientidbase=$(PRODUCT_GMS_CLIENTID_BASE)
 endif
 
-# Long screenshot
-PRODUCT_PACKAGES += \
-    Longshot
-
 # Backup Tool
 PRODUCT_COPY_FILES += \
     vendor/aosip/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
@@ -112,13 +108,13 @@ PRODUCT_PACKAGE_OVERLAYS += vendor/aosip/overlay/common
 include vendor/aosip/config/bootanimation.mk
 
 # GSans font
-include vendor/aosip/config/fonts.mk
+#include vendor/aosip/config/fonts.mk
 
 # Packages
 include vendor/aosip/config/packages.mk
 
 # Themes
-include vendor/aosip/config/themes.mk
+#include vendor/aosip/config/themes.mk
 
 # Versioning
 include vendor/aosip/config/version.mk
