@@ -1,14 +1,11 @@
 # Required packages
 PRODUCT_PACKAGES += \
-    CustomDoze \
     Gallery2 \
     LatinIME \
     Launcher3 \
     LiveWallpapers \
     LiveWallpapersPicker \
-    messaging \
-    WeatherClient \
-    Updater
+    messaging
 
 # Filesystems tools
 PRODUCT_PACKAGES += \
