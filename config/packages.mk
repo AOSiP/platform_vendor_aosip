@@ -5,7 +5,8 @@ PRODUCT_PACKAGES += \
     Launcher3 \
     LiveWallpapers \
     LiveWallpapersPicker \
-    messaging
+    messaging \
+    ThemePicker
 
 # Filesystems tools
 PRODUCT_PACKAGES += \
