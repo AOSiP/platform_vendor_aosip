@@ -28,10 +28,6 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.com.google.clientidbase=$(PRODUCT_GMS_CLIENTID_BASE)
 endif
 
-# Long screenshot
-PRODUCT_PACKAGES += \
-    Longshot
-
 # Backup Tool
 PRODUCT_COPY_FILES += \
     vendor/aosip/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
