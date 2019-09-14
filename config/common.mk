@@ -60,10 +60,6 @@ $(foreach f,$(wildcard vendor/aosip/prebuilt/common/etc/init/*.rc),\
 # Don't compile SystemUITests
 EXCLUDE_SYSTEMUI_TESTS := true
 
-# Don't export PS1 in /system/etc/mkshrc.
-PRODUCT_COPY_FILES += \
-    vendor/aosip/prebuilt/common/etc/mkshrc:system/etc/mkshrc
-
 # Don't include art debug targets
 PRODUCT_ART_TARGET_INCLUDE_DEBUG_BUILD := false
 
