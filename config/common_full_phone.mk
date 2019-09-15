@@ -7,11 +7,11 @@ PRODUCT_PACKAGES += \
 
 # World SPN overrides list
 PRODUCT_COPY_FILES += \
-    vendor/aosip/prebuilt/common/etc/spn-conf.xml:system/etc/spn-conf.xml
+    vendor/aosip/prebuilt/common/etc/spn-conf.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/spn-conf.xml
 
 # Selective SPN list for operator number who has the problem.
 PRODUCT_COPY_FILES += \
-    vendor/aosip/prebuilt/common/etc/selective-spn-conf.xml:system/etc/selective-spn-conf.xml
+    vendor/aosip/prebuilt/common/etc/selective-spn-conf.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/selective-spn-conf.xml
 
 # SIM Toolkit
 PRODUCT_PACKAGES += \
@@ -19,4 +19,4 @@ PRODUCT_PACKAGES += \
 
 # Sensitive Phone Numbers list
 PRODUCT_COPY_FILES += \
-    vendor/aosip/prebuilt/common/etc/sensitive_pn.xml:system/etc/sensitive_pn.xml
+    vendor/aosip/prebuilt/common/etc/sensitive_pn.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sensitive_pn.xml
