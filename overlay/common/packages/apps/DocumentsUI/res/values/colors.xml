@@ -15,7 +15,5 @@
 -->
 
 <resources>
-
-    <color name="navigation_bar_color">@android:color/white</color>
-
+    <color name="primary">#ff1a73e8</color>
 </resources>
