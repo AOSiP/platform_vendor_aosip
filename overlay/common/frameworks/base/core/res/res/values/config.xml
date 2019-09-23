@@ -121,6 +121,11 @@
     <!-- Flag indicating whether we should enable smart battery. -->
     <bool name="config_smart_battery_available">true</bool>
 
+    <!-- When true, the tethering upstream network follows the current default
+         Internet network (except when the current default network is mobile,
+         in which case a DUN network will be used if required). -->
+    <bool name="config_tether_upstream_automatic">true</bool>
+  
     <!-- Google Sans font usage -->
     <string name="config_headlineFontFamily">google-sans</string>
     <string name="config_headlineFontFamilyLight">google-sans</string>
