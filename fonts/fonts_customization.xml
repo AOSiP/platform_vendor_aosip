@@ -38,4 +38,12 @@
       <font weight="600" style="italic">ZillaSlab-SemiBoldItalic.ttf</font>
     </family>
     <alias name="zilla-slab-semi-bold" to="zilla-slab-medium" weight="600" />
+
+    <family customizationType="new-named-family" name="arvo">
+      <font weight="400" style="normal">Arvo-Regular.ttf</font>
+      <font weight="400" style="italic">Arvo-Italic.ttf</font>
+      <font weight="700" style="normal">Arvo-Bold.ttf</font>
+      <font weight="700" style="italic">Arvo-BoldItalic.ttf</font>
+    </family>
+    <alias name="arvo-bold" to="arvo" weight="700" />
 </fonts-modification>
