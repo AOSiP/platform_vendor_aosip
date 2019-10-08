@@ -20,7 +20,7 @@ type Product_variables struct {
 	Needs_text_relocations struct {
 		Cppflags []string
 	}
-	Should_skip_waiting_for_qsee struct {
+	Should_wait_for_qsee struct {
 		Cflags []string
 	}
 	Supports_hw_fde struct {
@@ -80,8 +80,12 @@ type ProductVariables struct {
 	Apply_msm8974_1440p_egl_workaround  *bool `json:",omitempty"`
 	Bootloader_message_offset  *int `json:",omitempty"`
 	Has_legacy_camera_hal1  *bool `json:",omitempty"`
+<<<<<<< HEAD
 	Needs_text_relocations  *bool `json:",omitempty"`
 	Should_skip_waiting_for_qsee  *bool `json:",omitempty"`
+=======
+	Should_wait_for_qsee  *bool `json:",omitempty"`
+>>>>>>> 119f9d17... soong_config: Reverse wait for qsee flag
 	Specific_camera_parameter_library  *string `json:",omitempty"`
 	Supports_hw_fde  *bool `json:",omitempty"`
 	Supports_hw_fde_perf  *bool `json:",omitempty"`
