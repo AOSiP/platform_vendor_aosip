@@ -4,6 +4,7 @@ PRODUCT_PACKAGES += \
     LatinIME \
     messaging \
     ThemePicker \
+    AOSiPOverlayStub \
     Updater
 
 # Extra tools in AOSiP
