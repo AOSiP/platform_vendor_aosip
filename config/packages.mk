@@ -7,6 +7,7 @@ PRODUCT_PACKAGES += \
     LiveWallpapersPicker \
     messaging \
     ThemePicker \
+    AOSiPOverlayStub \
     Updater
 
 # Extra tools in AOSiP
