@@ -8,6 +8,7 @@ PRODUCT_PACKAGES += \
     messaging \
     SoundPickerPrebuilt \
     ThemePicker \
+    AOSiPOverlayStub \
     Updater
 
 # Extra tools in AOSiP
