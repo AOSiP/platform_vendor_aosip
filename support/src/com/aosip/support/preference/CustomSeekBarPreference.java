@@ -279,11 +279,14 @@ public class CustomSeekBarPreference extends Preference implements SeekBar.OnSee
     }
 
     @Override
-    protected void onSetInitialValue(boolean restoreValue, Object defaultValue) {
-        if (restoreValue) {
-            mCurrentValue = getPersistedInt(mCurrentValue);
+    protected void onSetInitialValue(boolean restorePersistedValue, Object defaultValue) {
+        // when using PreferenceDataStore, restorePersistedValue is always true (see Preference class for reference)
+        // so we load the persistent value with getPersistedInt if available in the data store, 
+        // and use defaultValue as fallback (onGetDefaultValue has been already called and it loaded the android:defaultValue attr from our xml).
+        if (restorePersistedValue) {
+            mCurrentValue = getPersistedInt((Integer) defaultValue);
         }
-        else {
+        /*else {
             int temp = 0;
             try {
                 temp = (Integer) defaultValue;
@@ -292,7 +295,7 @@ public class CustomSeekBarPreference extends Preference implements SeekBar.OnSee
             }
             persistInt(temp);
             mCurrentValue = temp;
-        }
+        }*/
     }
 
     public void setDefaultValue(int value) {
