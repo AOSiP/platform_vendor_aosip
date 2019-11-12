@@ -19,7 +19,6 @@
     <declare-styleable name="CustomSeekBarPreference">
         <attr name="interval" format="integer" />
         <attr name="units" format="string|reference" />
-        <attr name="defaultText" format="string|reference" />
         <attr name="allowEditText" format="boolean" />
     </declare-styleable>
 
