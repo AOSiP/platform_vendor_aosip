@@ -1,8 +1,9 @@
 # Required packages
 PRODUCT_PACKAGES += \
     Gallery2 \
-    LatinIME \
+    LatinIMEGooglePrebuilt \
     messaging \
+    SoundPickerPrebuilt \
     ThemePicker \
     Updater
 
