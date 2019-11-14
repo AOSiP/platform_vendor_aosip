@@ -1,11 +1,12 @@
 # Required packages
 PRODUCT_PACKAGES += \
     Gallery2 \
-    LatinIME \
+    LatinIMEGooglePrebuilt \
     Launcher3 \
     LiveWallpapers \
     LiveWallpapersPicker \
     messaging \
+    SoundPickerPrebuilt \
     ThemePicker \
     Updater
 
