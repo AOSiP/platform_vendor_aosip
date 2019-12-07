@@ -16,7 +16,7 @@
 PRODUCT_VERSION_MAJOR = 9
 PRODUCT_VERSION_MINOR = 0
 
-DATE := $(shell date +%Y%m%d)
+DATE := $(shell date +%Y%m%d-%H%M)
 TARGET_PRODUCT_SHORT := $(subst aosip_,,$(AOSIP_BUILDTYPE))
 
 AOSIP_BUILDTYPE ?= Pizza
