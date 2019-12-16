@@ -56,12 +56,14 @@
     <!-- Additional permissions on top of privapp-permissions-platform.xml -->
     <privapp-permissions package="com.android.phone">
         <permission name="android.permission.OVERRIDE_WIFI_CONFIG"/>
+        <permission name="android.permission.START_ACTIVITIES_FROM_BACKGROUND"/>
     </privapp-permissions>
 
     <!-- Additional permissions on top of privapp-permissions-platform.xml -->
     <privapp-permissions package="com.android.settings">
         <permission name="android.permission.NAVIGATION_EDITOR"/>
         <permission name="android.permission.RESET_BATTERY_STATS"/>
+        <permission name="android.permission.MODIFY_AUDIO_ROUTING"/>
     </privapp-permissions>
 
     <!-- Additional permissions on top of privapp-permissions-platform.xml -->
