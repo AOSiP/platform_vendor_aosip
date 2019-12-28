@@ -61,17 +61,6 @@ EXCLUDE_SYSTEMUI_TESTS := true
 # Don't include art debug targets
 PRODUCT_ART_TARGET_INCLUDE_DEBUG_BUILD := false
 
-# LatinIME gesture typing
-ifeq ($(TARGET_ARCH),arm64)
-PRODUCT_COPY_FILES += \
-    vendor/aosip/prebuilt/common/lib64/libjni_latinime.so:$(TARGET_COPY_OUT_SYSTEM)/lib64/libjni_latinime.so \
-    vendor/aosip/prebuilt/common/lib64/libjni_latinimegoogle.so:$(TARGET_COPY_OUT_SYSTEM)/lib64/libjni_latinimegoogle.so
-else
-PRODUCT_COPY_FILES += \
-    vendor/aosip/prebuilt/common/lib/libjni_latinime.so:$(TARGET_COPY_OUT_SYSTEM)/lib/libjni_latinime.so \
-    vendor/aosip/prebuilt/common/lib/libjni_latinimegoogle.so:$(TARGET_COPY_OUT_SYSTEM)/lib/libjni_latinimegoogle.so
-endif
-
 # Permissions
 PRODUCT_COPY_FILES += \
     vendor/aosip/prebuilt/common/etc/permissions/privapp-permissions-aosip-product.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-aosip.xml \
