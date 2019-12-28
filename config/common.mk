@@ -82,7 +82,8 @@ endif
 
 # Permissions
 PRODUCT_COPY_FILES += \
-    vendor/aosip/prebuilt/common/etc/permissions/aosip-privapp-permissions.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/aosip-privapp-permissions.xml \
+    vendor/aosip/prebuilt/common/etc/permissions/privapp-permissions-aosip-product.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-aosip.xml \
+    vendor/aosip/prebuilt/common/etc/permissions/privapp-permissions-aosip.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-aosip.xml \
     vendor/aosip/prebuilt/common/etc/permissions/org.pixelexperience.weather.client.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/org.pixelexperience.weather.client.xml \
     vendor/aosip/prebuilt/common/etc/permissions/privapp-permissions-elgoog.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-elgoog.xml
 
