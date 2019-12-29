@@ -18,7 +18,7 @@ PRODUCT_COPY_FILES += $(call find-copy-subdir-files,*,$(LOCAL_PATH)/ringtones,$(
 PRODUCT_COPY_FILES += $(call find-copy-subdir-files,*,$(LOCAL_PATH)/ui,$(TARGET_COPY_OUT_PRODUCT)/media/audio/ui)
 
 # Set default ringtone, notification and alarm
-PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+PRODUCT_PROPERTY_OVERRIDES += \
    ro.config.alarm_alert=Bright_morning.ogg \
    ro.config.ringtone=Zen_too.ogg,Zen_too.ogg \
    ro.config.notification_sound=Chime.ogg
