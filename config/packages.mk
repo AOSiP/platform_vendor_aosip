@@ -2,10 +2,6 @@
 PRODUCT_PACKAGES += \
     Gallery2 \
     LatinIME \
-    Launcher3 \
-    LiveWallpapers \
-    LiveWallpapersPicker \
-    messaging \
     ThemePicker \
     Updater
 
