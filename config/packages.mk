@@ -2,6 +2,7 @@
 PRODUCT_PACKAGES += \
     Gallery2 \
     LatinIME \
+    messaging \
     ThemePicker \
     Updater
 
