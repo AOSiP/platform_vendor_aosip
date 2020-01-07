@@ -89,3 +89,6 @@ include vendor/aosip/config/packages.mk
 
 # Versioning
 include vendor/aosip/config/version.mk
+
+# Google Play system update
+include vendor/google_psu/google-psu.mk
