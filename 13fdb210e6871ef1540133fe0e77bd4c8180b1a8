@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2cbc457f_3a62e599",
+        "filename": "overlay/common/frameworks/base/core/res/res/values/config.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 1000075
+      },
+      "writtenOn": "2020-01-09T06:28:44Z",
+      "side": 0,
+      "message": "we need this for the gesture options to actually show",
+      "revId": "13fdb210e6871ef1540133fe0e77bd4c8180b1a8",
+      "serverId": "44769751-fbfc-497d-9c9a-4bb318a4117c",
+      "unresolved": true
+    }
+  ]
+}
