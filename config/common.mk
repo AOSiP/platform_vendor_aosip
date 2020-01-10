@@ -90,5 +90,8 @@ include vendor/aosip/config/sounds.mk
 # Packages
 include vendor/aosip/config/packages.mk
 
+# Prebuilts
+$(call inherit-product-if-exists, vendor/prebuilts/packages.mk)
+
 # Versioning
 include vendor/aosip/config/version.mk
