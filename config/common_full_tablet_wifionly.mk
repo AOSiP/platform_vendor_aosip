@@ -6,4 +6,4 @@ PRODUCT_PACKAGES += \
     LatinIME
 
 # Include AOSiP LatinIME dictionaries
-PRODUCT_PACKAGE_OVERLAYS += vendor/aosip/overlay/dictionaries
+PRODUCT_PACKAGE_OVERLAYS += vendor/overlay/dictionaries
