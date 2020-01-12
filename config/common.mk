@@ -74,29 +74,14 @@ PRODUCT_COPY_FILES += \
 # leave less information available via JDWP.
 PRODUCT_MINIMIZE_JAVA_DEBUG_INFO := true
 
-# Common overlay
-PRODUCT_PACKAGE_OVERLAYS += vendor/aosip/overlay/common
-
 # Disable vendor restrictions
 PRODUCT_RESTRICT_VENDOR_FILES := false
 
-# Bootanimation
-include vendor/aosip/config/bootanimation.mk
-
-# GSans font
-include vendor/aosip/config/fonts.mk
-
-# Pixel sounds
-include vendor/aosip/config/sounds.mk
+# Overlays
+include vendor/overlay/overlays.mk
 
 # Packages
 include vendor/aosip/config/packages.mk
-
-# Prebuilts
-$(call inherit-product-if-exists, vendor/prebuilts/packages.mk)
-
-# Themes
-include vendor/aosip/config/accents.mk
 
 # Versioning
 include vendor/aosip/config/version.mk
