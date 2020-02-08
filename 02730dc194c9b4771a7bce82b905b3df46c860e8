@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "65828b9c_63f7b652",
+        "filename": "aosip.devices",
+        "patchSetId": 7
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1000001
+      },
+      "writtenOn": "2020-02-08T23:33:45Z",
+      "side": 1,
+      "message": "umm what now :|",
+      "revId": "02730dc194c9b4771a7bce82b905b3df46c860e8",
+      "serverId": "44769751-fbfc-497d-9c9a-4bb318a4117c",
+      "unresolved": true
+    }
+  ]
+}
