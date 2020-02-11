@@ -89,3 +89,6 @@ include vendor/aosip/config/packages.mk
 
 # Versioning
 include vendor/aosip/config/version.mk
+
+# Inherit from apex config
+$(call inherit-product, vendor/aosip/config/apex.mk)
