@@ -1,3 +1,8 @@
+# APEX
+ifneq ($(filter Alpha Beta CI Official,$(AOSIP_BUILDTYPE)),)
+    TARGET_FLATTEN_APEX := true
+endif
+
 include vendor/aosip/config/BoardConfigKernel.mk
 
 ifeq ($(BOARD_USES_QCOM_HARDWARE),true)
