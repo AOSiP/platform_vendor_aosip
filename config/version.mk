@@ -23,7 +23,7 @@ ROM_FINGERPRINT := AOSiP/$(PLATFORM_VERSION)/$(TARGET_PRODUCT_SHORT)/$(shell dat
 
 # Build fingerprint
 ifneq ($(BUILD_FINGERPRINT),)
-PRODUCT_PROPERTY_OVERRIDES += \
+AOSIP_PRODUCT_PROPERTIES += \
     ro.build.fingerprint=$(BUILD_FINGERPRINT)
 endif
 
