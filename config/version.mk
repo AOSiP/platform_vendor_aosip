@@ -27,7 +27,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.build.fingerprint=$(BUILD_FINGERPRINT)
 endif
 
-PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+AOSIP_PRODUCT_PROPERTIES += \
   ro.aosip.build.version=$(AOSIP_BUILD_VERSION) \
   ro.aosip.build.date=$(BUILD_DATE) \
   ro.aosip.buildtype=$(AOSIP_BUILDTYPE) \
