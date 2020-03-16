@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a0cf8bbe_ae6f5ee0",
+        "filename": "prebuilt/common/bin/backuptool.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 1000344
+      },
+      "writtenOn": "2020-03-16T11:52:45Z",
+      "side": 1,
+      "message": "It should be \"fi\" not the \"end\"",
+      "revId": "13aa296c12c33b36b8e59f9fbd1c58331d883bb4",
+      "serverId": "44769751-fbfc-497d-9c9a-4bb318a4117c",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "81439441_19b3b8fe",
+        "filename": "prebuilt/common/bin/backuptool.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 1000344
+      },
+      "writtenOn": "2020-03-16T11:52:45Z",
+      "side": 1,
+      "message": "It should be \"fi\" not the \"end\"",
+      "revId": "13aa296c12c33b36b8e59f9fbd1c58331d883bb4",
+      "serverId": "44769751-fbfc-497d-9c9a-4bb318a4117c",
+      "unresolved": true
+    }
+  ]
+}
