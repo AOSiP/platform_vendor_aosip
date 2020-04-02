@@ -14,7 +14,7 @@
 # limitations under the License.
 
 # We modify several neverallows, so let the build proceed
-ifneq ($(TARGET_BUILD_VARIANT),user)
+ifneq ($(filter $(TARGET_BUILD_VARIANT),user,userdebug),)
 SELINUX_IGNORE_NEVERALLOWS := true
 endif
 
