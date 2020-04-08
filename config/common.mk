@@ -33,6 +33,18 @@ AOSIP_PRODUCT_PROPERTIES += \
     ro.com.google.clientidbase=$(PRODUCT_GMS_CLIENTID_BASE)
 endif
 
+# Face Unlock
+TARGET_FACE_UNLOCK_SUPPORTED := false
+ifeq ($(PRODUCT_ARCH),arm64)
+ifneq ($(TARGET_DISABLE_ALTERNATIVE_FACE_UNLOCK), true)
+PRODUCT_PACKAGES += \
+    FaceUnlockService
+TARGET_FACE_UNLOCK_SUPPORTED := true
+endif
+endif
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+    ro.face.moto_unlock_service=$(TARGET_FACE_UNLOCK_SUPPORTED)
+
 # Backup Tool
 PRODUCT_COPY_FILES += \
     vendor/aosip/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
