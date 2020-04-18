@@ -73,6 +73,7 @@ PRODUCT_ART_TARGET_INCLUDE_DEBUG_BUILD := false
 
 # Permissions
 PRODUCT_COPY_FILES += \
+    vendor/aosip/prebuilt/common/etc/permissions/default-permissions-faceunlock-product.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/default-permissions/default-permissions-faceunlock.xml \
     vendor/aosip/prebuilt/common/etc/permissions/privapp-permissions-aosip-product.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-aosip.xml \
     vendor/aosip/prebuilt/common/etc/permissions/privapp-permissions-aosip.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-aosip.xml \
     vendor/aosip/prebuilt/common/etc/permissions/privapp-permissions-elgoog.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-elgoog.xml

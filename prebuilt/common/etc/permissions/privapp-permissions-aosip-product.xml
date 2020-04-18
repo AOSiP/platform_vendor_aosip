@@ -49,4 +49,8 @@
         <permission name="android.permission.WRITE_APN_SETTINGS"/>
     </privapp-permissions>
 
+    <privapp-permissions package="co.aospa.facesense">
+        <permission name="android.permission.WRITE_SECURE_SETTINGS"/>
+    </privapp-permissions>
+
 </permissions>

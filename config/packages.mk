@@ -28,6 +28,16 @@ PRODUCT_PACKAGES += \
     wget \
     zip
 
+# Faceunlock
+TARGET_ENABLE_FACE_SENSE ?= true
+ifeq ($(TARGET_ENABLE_FACE_SENSE), true)
+PRODUCT_PACKAGES += \
+    ParanoidFaceSense
+DEVICE_PACKAGE_OVERLAYS += vendor/overlay/faceunlock
+endif
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+    ro.face.sense_service=$(TARGET_ENABLE_FACE_SENSE)
+
 # Filesystems tools
 PRODUCT_PACKAGES += \
     fsck.exfat \
