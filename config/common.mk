@@ -1,6 +1,6 @@
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 
-AOSIP_PRODUCT_PROPERTIES += \
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     dalvik.vm.debug.alloc=0 \
     keyguard.no_require_sim=true \
     media.recorder.show_manufacturer_and_model=true \
@@ -26,10 +26,10 @@ PRODUCT_PACKAGES += \
     libjni_latinimegoogle
 
 ifeq ($(PRODUCT_GMS_CLIENTID_BASE),)
-AOSIP_PRODUCT_PROPERTIES += \
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.com.google.clientidbase=android-google
 else
-AOSIP_PRODUCT_PROPERTIES += \
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.com.google.clientidbase=$(PRODUCT_GMS_CLIENTID_BASE)
 endif
 
