@@ -440,7 +440,10 @@ if __name__ == '__main__':
 
         # Print out some useful info
         if not args.quiet:
-            print(u'--> Subject:       "{0}"'.format(item['subject']))
+            try:
+                print(u'--> Subject:       "{0}"'.format(item['subject']))
+            except UnicodeEncodeError:
+                print(u'--> Subject:       "{0}"'.format(item['subject']).encode('utf-8'))
             print('--> Project path:  {0}'.format(project_path))
             print('--> Change number: {0} (Patch Set {1})'.format(item['id'], item['patchset']))
 
