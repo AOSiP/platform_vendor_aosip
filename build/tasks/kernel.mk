@@ -189,9 +189,6 @@ ifeq ($(TARGET_KERNEL_CLANG_COMPILE),true)
     ifeq ($(KERNEL_CC),)
         KERNEL_CC := CC="$(CCACHE_BIN) clang"
     endif
-    ifneq ($(TARGET_KERNEL_USE_LLD),)
-        KERNEL_CC += LD=$(TARGET_KERNEL_CLANG_PATH)/bin/ld.lld
-    endif
 endif
 
 ifneq ($(TARGET_KERNEL_MODULES),)
