@@ -1,10 +1,11 @@
 # Required packages
 PRODUCT_PACKAGES += \
+    AOSiPOverlayStub \
     Gallery2 \
+    Jelly \
     LatinIME \
     messaging \
     ThemePicker \
-    AOSiPOverlayStub \
     Updater
 
 # Extra tools in AOSiP
