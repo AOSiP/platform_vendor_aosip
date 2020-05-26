@@ -1,7 +1,6 @@
 AOSIP_TARGET_PACKAGE := $(PRODUCT_OUT)/AOSiP-$(AOSIP_VERSION).zip
 
-.PHONY: otapackage kronic bacon
-otapackage: $(INTERNAL_OTA_PACKAGE_TARGET)
+.PHONY: kronic bacon
 kronic: otapackage
 	$(hide) mv $(INTERNAL_OTA_PACKAGE_TARGET) $(AOSIP_TARGET_PACKAGE)
 	$(hide) $(MD5SUM) $(AOSIP_TARGET_PACKAGE) | cut -d ' ' -f1 > $(AOSIP_TARGET_PACKAGE).md5sum
