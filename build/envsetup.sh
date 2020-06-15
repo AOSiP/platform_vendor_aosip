@@ -51,6 +51,11 @@ function repopick()
     $T/vendor/aosip/build/tools/repopick.py $@
 }
 
+# Repo sync with various flags I'm lazy to type each time
+function syncc() {
+    time repo sync --force-sync --no-clone-bundle --current-branch --no-tags "$@"
+}
+
 function gerrit()
 {
     if [ ! -d ".git" ]; then
