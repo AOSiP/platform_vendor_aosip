@@ -26,6 +26,8 @@
     <declare-styleable name="ColorPickerPreference">
         <attr name="alphaSlider" format="boolean" />
         <attr name="ledPreview" format="boolean" />
+        <attr name="showPreview" format="boolean" />
+        <attr name="showReset" format="boolean" />
     </declare-styleable>
 
     <!-- Base attributes available to CircularImageView -->
@@ -40,5 +42,4 @@
         <attr name="android:verticalSpacing" />
         <attr name="android:horizontalSpacing" />
     </declare-styleable>
-
 </resources>
