@@ -113,7 +113,7 @@ public class ColorPickerPreference extends Preference implements
             mDefaultValue = attrs.getAttributeIntValue(ANDROIDNS, "defaultValue", Color.BLACK);
             mShowLedPreview = attrs.getAttributeBooleanValue(null, "ledPreview", false);
             mShowReset = attrs.getAttributeBooleanValue(SETTINGS_NS, "showReset", false);
-            mShowPreview = attrs.getAttributeBooleanValue(SETTINGS_NS, "showPreview", false);
+            mShowPreview = attrs.getAttributeBooleanValue(SETTINGS_NS, "showPreview", true);
             mDividerAbove = attrs.getAttributeBooleanValue(SETTINGS_NS, "dividerAbove", false);
             mDividerBelow = attrs.getAttributeBooleanValue(SETTINGS_NS, "dividerBelow", false);
         }
