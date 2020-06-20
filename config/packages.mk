@@ -42,3 +42,5 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libprotobuf-cpp-full \
     librsjni
+
+-include packages/apps/Plugins/plugins.mk
