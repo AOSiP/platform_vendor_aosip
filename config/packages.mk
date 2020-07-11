@@ -5,6 +5,7 @@ PRODUCT_PACKAGES += \
     Jelly \
     LatinIME \
     messaging \
+    TouchGestures \
     ThemePicker \
     Updater
 
