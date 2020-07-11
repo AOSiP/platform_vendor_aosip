@@ -13,7 +13,6 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.config.bt_sco_vol_steps=30 \
     ro.config.media_vol_steps=30 \
     ro.error.receiver.system.apps=com.google.android.gms \
-    ro.opa.eligible_device=true \
     ro.setupwizard.enterprise_mode=1 \
     ro.storage_manager.enabled=true \
     ro.com.google.ime.bs_theme=true \
