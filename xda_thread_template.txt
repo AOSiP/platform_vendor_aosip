@@ -4,7 +4,7 @@ An example thread is here: https://forum.xda-developers.com/oneplus-6/developmen
 
 <BEGIN 1st POST>
 
-[CENTER][IMG="AOSIP"]https://aosip.dev/static/logo.png[/IMG][/CENTER]
+[CENTER][IMG="AOSiP"]https://aosip.dev/static/logo.png[/IMG][/CENTER]
 [CENTER][CODE][B][CENTER]**** Disclaimer: I'm not responsible if you destroy your device. Use at your own risk!!! ****[/CENTER][/B][/CODE][/CENTER]
 [CENTER][SIZE="6"][B]Android Open Source illusion Project[/B][/SIZE][/CENTER]
 
@@ -32,14 +32,14 @@ An example thread is here: https://forum.xda-developers.com/oneplus-6/developmen
 
 [CENTER][B][SIZE="5"]Source code:[/SIZE][/B]
 [HIDE]
-[URL="http://review.aosip.dev"]AOSiP Gerrit Review[/URL]
-[URL="https://github.com/AOSiP"]AOSiP Github[/URL]
-[URL="https://github.com/AOSiP-Devices/kernel_<manufacturer>_<codename>"]Kernel Source[/URL]
+[URL="https://aosip.dev/r"]AOSiP Gerrit Review[/URL]
+[URL="https://aosip.dev/g"]AOSiP Github[/URL]
+[URL="https://aosip.dev/d/kernel_<manufacturer>_<codename>"]Kernel Source[/URL]
 [/HIDE][/CENTER]
 
 [CENTER][B][SIZE="5"][URL=https://aosip.dev]Latest Downloads[/URL]:[/SIZE][/B]
 [HIDE][SIZE="4"]
-[URL="https://aosip.dev/<codename>"]Official Server[/URL] | [URL="https://sourceforge.net/projects/illusionproject/files/<codename>/"]SourceForge Mirror[/URL]
+[URL="https://aosip.dev/<codename>"]Official Server[/URL] | [URL="https://sourceforge.net/projects/illusionproject/files/<codename>/"]SourceForge Mirror[/URL] | [URL="https://github.com/AOSiP/builds/releases"]GitHub Releases Mirror[/URL]
 [/SIZE][/HIDE][/CENTER]
 
 [CENTER][B][SIZE="5"]Credit/Thanks:[/SIZE][/B]
@@ -58,11 +58,6 @@ nathanchance
 ---------
 Other projects whose work helped us to create this
 And last but not the least, all our testers, who have helped us to squash many bugs so that we can try to release builds that as are flawless as possible[/CENTER][/HIDE]
-
-[CENTER]
-Hosted and built on
-[URL="https://packet.com"][IMG]https://aosip.dev/static/packet.png[/IMG][/URL]
-[/CENTER]
 
 =========================================================================================================================================================================
 
