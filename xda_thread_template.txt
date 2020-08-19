@@ -39,7 +39,7 @@ An example thread is here: https://forum.xda-developers.com/oneplus-6/developmen
 
 [CENTER][B][SIZE="5"][URL=https://aosip.dev]Latest Downloads[/URL]:[/SIZE][/B]
 [HIDE][SIZE="4"]
-[URL="https://aosip.dev/<codename>"]Official Server[/URL] | [URL="https://sourceforge.net/projects/illusionproject/files/<codename>/"]SourceForge Mirror[/URL] | [URL="https://github.com/AOSiP/builds/releases"]GitHub Releases Mirror[/URL]
+[URL="https://aosip.dev/<codename>"]Official Server[/URL] | [URL="https://sourceforge.net/projects/illusionproject/files/<codename>/"]SourceForge Mirror[/URL]
 [/SIZE][/HIDE][/CENTER]
 
 [CENTER][B][SIZE="5"]Credit/Thanks:[/SIZE][/B]
