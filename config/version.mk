@@ -1,4 +1,4 @@
-# Copyright (C) 2016-2019 AOSiP
+# Copyright (C) 2016-2020 AOSiP
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -16,8 +16,8 @@
 BUILD_DATE := $(shell date +%Y%m%d)
 TARGET_PRODUCT_SHORT := $(subst aosip_,,$(AOSIP_BUILDTYPE))
 
-AOSIP_BUILDTYPE ?= Quiche
-AOSIP_BUILD_VERSION := 10
+AOSIP_BUILDTYPE ?= R
+AOSIP_BUILD_VERSION := 11
 AOSIP_VERSION := $(AOSIP_BUILD_VERSION)-$(AOSIP_BUILDTYPE)-$(AOSIP_BUILD)-$(BUILD_DATE)
 ROM_FINGERPRINT := AOSiP/$(PLATFORM_VERSION)/$(TARGET_PRODUCT_SHORT)/$(shell date -u +%H%M)
 
