@@ -21,8 +21,8 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.url.legal.android_privacy=http://www.google.com/intl/%s/mobile/android/basic/privacy.html
 
 # Extra packages
-PRODUCT_PACKAGES += \
-    libjni_latinimegoogle
+#PRODUCT_PACKAGES += \
+#    libjni_latinimegoogle
 
 ifeq ($(PRODUCT_GMS_CLIENTID_BASE),)
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
