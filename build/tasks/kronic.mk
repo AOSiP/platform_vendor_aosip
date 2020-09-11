@@ -1,9 +1,16 @@
 AOSIP_TARGET_PACKAGE := $(PRODUCT_OUT)/AOSiP-$(AOSIP_VERSION).zip
 
+# It's called md5 on Mac OS and md5sum on Linux
+ifeq ($(HOST_OS),darwin)
+MD5 := md5 -q
+else
+MD5 := md5sum
+endif
+
 .PHONY: kronic bacon
 kronic: otapackage
 	$(hide) mv $(INTERNAL_OTA_PACKAGE_TARGET) $(AOSIP_TARGET_PACKAGE)
-	$(hide) $(MD5SUM) $(AOSIP_TARGET_PACKAGE) | cut -d ' ' -f1 > $(AOSIP_TARGET_PACKAGE).md5sum
+	$(hide) $(MD5) $(AOSIP_TARGET_PACKAGE) | cut -d ' ' -f1 > $(AOSIP_TARGET_PACKAGE).md5sum
 	@echo -e ""
 	@echo -e "${cya}Building ${bldcya}AOSiP ${txtrst}";
 	@echo -e ""
