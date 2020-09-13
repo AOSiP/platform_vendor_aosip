@@ -49,29 +49,26 @@ endif
 #endif
 
 # Backup Services whitelist
-PRODUCT_COPY_FILES += \
-    vendor/aosip/config/backup.xml:system/etc/sysconfig/backup.xml
+#PRODUCT_COPY_FILES += \
+#    vendor/aosip/config/backup.xml:system/etc/sysconfig/backup.xml
 
 # Charger
 PRODUCT_PACKAGES += \
     charger_res_images
 
 # Configs
-PRODUCT_COPY_FILES += \
-    vendor/aosip/prebuilt/common/etc/sysconfig/dialer_experience.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/dialer_experience.xml \
-    vendor/aosip/prebuilt/common/etc/sysconfig/turbo.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/turbo.xml
+#PRODUCT_COPY_FILES += \
+#    vendor/aosip/prebuilt/common/etc/sysconfig/dialer_experience.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/dialer_experience.xml \
+#    vendor/aosip/prebuilt/common/etc/sysconfig/turbo.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/turbo.xml
 
 # Copy all AOSiP-specific init rc files
-$(foreach f,$(wildcard vendor/aosip/prebuilt/common/etc/init/*.rc),\
-	$(eval PRODUCT_COPY_FILES += $(f):$(TARGET_COPY_OUT_SYSTEM)/etc/init/$(notdir $f)))
+#$(foreach f,$(wildcard vendor/aosip/prebuilt/common/etc/init/*.rc),\
+#	$(eval PRODUCT_COPY_FILES += $(f):$(TARGET_COPY_OUT_SYSTEM)/etc/init/$(notdir $f)))
 
 # Dex preopt
 PRODUCT_DEXPREOPT_SPEED_APPS += \
     SystemUI \
     Launcher3QuickStep
-
-# Don't compile SystemUITests
-EXCLUDE_SYSTEMUI_TESTS := true
 
 # Don't include art debug targets
 PRODUCT_ART_TARGET_INCLUDE_DEBUG_BUILD := false
