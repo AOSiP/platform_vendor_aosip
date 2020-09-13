@@ -70,9 +70,6 @@ PRODUCT_DEXPREOPT_SPEED_APPS += \
     SystemUI \
     Launcher3QuickStep
 
-# Don't compile SystemUITests
-EXCLUDE_SYSTEMUI_TESTS := true
-
 # Don't include art debug targets
 PRODUCT_ART_TARGET_INCLUDE_DEBUG_BUILD := false
 
