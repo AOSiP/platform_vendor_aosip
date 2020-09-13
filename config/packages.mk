@@ -1,6 +1,5 @@
 # Required packages
 PRODUCT_PACKAGES += \
-    AOSiPOverlayStub \
     Gallery2 \
     Jelly \
     LatinIME \
