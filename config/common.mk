@@ -70,9 +70,6 @@ PRODUCT_DEXPREOPT_SPEED_APPS += \
     SystemUI \
     Launcher3QuickStep
 
-# Don't compile SystemUITests
-EXCLUDE_SYSTEMUI_TESTS := true
-
 # Don't include art debug targets
 PRODUCT_ART_TARGET_INCLUDE_DEBUG_BUILD := false
 
@@ -83,6 +80,32 @@ PRODUCT_MINIMIZE_JAVA_DEBUG_INFO := true
 
 # Disable vendor restrictions
 PRODUCT_RESTRICT_VENDOR_FILES := false
+
+PRODUCT_ARTIFACT_PATH_REQUIREMENT_ALLOWED_LIST += \
+    system/addon.d/50-base.sh \
+    system/bin/curl \
+    system/bin/getcap \
+    system/bin/setcap \
+    system/etc/init/aosip-adb.rc \
+    system/etc/init/aosip-iosched.rc \
+    system/etc/init/aosip-radio.rc \
+    system/etc/init/aosip-ssh.rc \
+    system/etc/init/aosip-system.rc \
+    system/etc/init/aosip-updates.rc \
+    system/etc/selective-spn-conf.xml \
+    system/etc/sensitive_pn.xml \
+    system/etc/spn-conf.xml \
+    system/etc/sysconfig/backup.xml \
+    system/etc/sysconfig/dialer_experience.xml \
+    system/etc/sysconfig/turbo.xml \
+    system/lib/libRSSupport.so \
+    system/lib/libblasV8.so \
+    system/lib/librsjni.so \
+    system/lib/libsepol.so \
+    system/lib64/libRSSupport.so \
+    system/lib64/libblasV8.so \
+    system/lib64/librsjni.so \
+    system/lib64/libsepol.so
 
 # Overlays
 include vendor/overlay/overlays.mk
