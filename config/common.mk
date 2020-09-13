@@ -21,8 +21,8 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.url.legal.android_privacy=http://www.google.com/intl/%s/mobile/android/basic/privacy.html
 
 # Extra packages
-#PRODUCT_PACKAGES += \
-#    libjni_latinimegoogle
+PRODUCT_PACKAGES += \
+    libjni_latinimegoogle
 
 ifeq ($(PRODUCT_GMS_CLIENTID_BASE),)
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
@@ -70,9 +70,6 @@ PRODUCT_DEXPREOPT_SPEED_APPS += \
     SystemUI \
     Launcher3QuickStep
 
-# Don't compile SystemUITests
-EXCLUDE_SYSTEMUI_TESTS := true
-
 # Don't include art debug targets
 PRODUCT_ART_TARGET_INCLUDE_DEBUG_BUILD := false
 
@@ -83,6 +80,21 @@ PRODUCT_MINIMIZE_JAVA_DEBUG_INFO := true
 
 # Disable vendor restrictions
 PRODUCT_RESTRICT_VENDOR_FILES := false
+
+PRODUCT_ARTIFACT_PATH_REQUIREMENT_ALLOWED_LIST += \
+    system/addon.d/50-base.sh \
+    system/etc/init/aosip-adb.rc \
+    system/etc/init/aosip-iosched.rc \
+    system/etc/init/aosip-radio.rc \
+    system/etc/init/aosip-ssh.rc \
+    system/etc/init/aosip-system.rc \
+    system/etc/init/aosip-updates.rc \
+    system/etc/selective-spn-conf.xml \
+    system/etc/sensitive_pn.xml \
+    system/etc/spn-conf.xml \
+    system/etc/sysconfig/backup.xml \
+    system/etc/sysconfig/dialer_experience.xml \
+    system/etc/sysconfig/turbo.xml
 
 # Overlays
 include vendor/overlay/overlays.mk

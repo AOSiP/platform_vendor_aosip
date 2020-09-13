@@ -1,12 +1,12 @@
 # Required packages
 PRODUCT_PACKAGES += \
-    AOSiPOverlayStub \
     Gallery2 \
     Jelly \
     LatinIME \
     messaging \
     ThemePicker \
     Updater
+#    AOSiPOverlayStub \
 
 # Extra tools in AOSiP
 PRODUCT_PACKAGES += \
@@ -14,20 +14,20 @@ PRODUCT_PACKAGES += \
     awk \
     bash \
     bzip2 \
-    curl \
-    getcap \
     htop \
     lib7z \
-    libsepol \
     nano \
     pigz \
     powertop \
-    setcap \
     unrar \
     unzip \
     vim \
     wget \
     zip
+#    libsepol \
+#    curl \
+#    getcap \
+#    setcap \
 
 # Filesystems tools
 PRODUCT_PACKAGES += \
@@ -41,4 +41,4 @@ PRODUCT_PACKAGES += \
 # Include explicitly to work around GMS issues
 PRODUCT_PACKAGES += \
     libprotobuf-cpp-full \
-    librsjni
+#    librsjni
