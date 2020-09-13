@@ -32,46 +32,43 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.com.google.clientidbase=$(PRODUCT_GMS_CLIENTID_BASE)
 endif
 
-PRODUCT_COPY_FILES += \
-    vendor/aosip/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
-    vendor/aosip/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions \
-    vendor/aosip/prebuilt/common/bin/50-base.sh:$(TARGET_COPY_OUT_SYSTEM)/addon.d/50-base.sh
+#PRODUCT_COPY_FILES += \
+#    vendor/aosip/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
+#    vendor/aosip/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions \
+#    vendor/aosip/prebuilt/common/bin/50-base.sh:$(TARGET_COPY_OUT_SYSTEM)/addon.d/50-base.sh
 
-ifneq ($(AB_OTA_PARTITIONS),)
-PRODUCT_COPY_FILES += \
-    vendor/aosip/prebuilt/common/bin/backuptool_ab.sh:$(TARGET_COPY_OUT_SYSTEM)/bin/backuptool_ab.sh \
-    vendor/aosip/prebuilt/common/bin/backuptool_ab.functions:$(TARGET_COPY_OUT_SYSTEM)/bin/backuptool_ab.functions \
-    vendor/aosip/prebuilt/common/bin/backuptool_postinstall.sh:$(TARGET_COPY_OUT_SYSTEM)/bin/backuptool_postinstall.sh
-ifneq ($(TARGET_BUILD_VARIANT),user)
-PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
-    ro.ota.allow_downgrade=true
-endif
-endif
+#ifneq ($(AB_OTA_PARTITIONS),)
+#PRODUCT_COPY_FILES += \
+#    vendor/aosip/prebuilt/common/bin/backuptool_ab.sh:$(TARGET_COPY_OUT_SYSTEM)/bin/backuptool_ab.sh \
+#    vendor/aosip/prebuilt/common/bin/backuptool_ab.functions:$(TARGET_COPY_OUT_SYSTEM)/bin/backuptool_ab.functions \
+#    vendor/aosip/prebuilt/common/bin/backuptool_postinstall.sh:$(TARGET_COPY_OUT_SYSTEM)/bin/#backuptool_postinstall.sh
+#ifneq ($(TARGET_BUILD_VARIANT),user)
+#PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+#    ro.ota.allow_downgrade=true
+#endif
+#endif
 
 # Backup Services whitelist
-PRODUCT_COPY_FILES += \
-    vendor/aosip/config/backup.xml:system/etc/sysconfig/backup.xml
+#PRODUCT_COPY_FILES += \
+#    vendor/aosip/config/backup.xml:system/etc/sysconfig/backup.xml
 
 # Charger
 PRODUCT_PACKAGES += \
     charger_res_images
 
 # Configs
-PRODUCT_COPY_FILES += \
-    vendor/aosip/prebuilt/common/etc/sysconfig/dialer_experience.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/dialer_experience.xml \
-    vendor/aosip/prebuilt/common/etc/sysconfig/turbo.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/turbo.xml
+#PRODUCT_COPY_FILES += \
+#    vendor/aosip/prebuilt/common/etc/sysconfig/dialer_experience.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/dialer_experience.xml \
+#    vendor/aosip/prebuilt/common/etc/sysconfig/turbo.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/turbo.xml
 
 # Copy all AOSiP-specific init rc files
-$(foreach f,$(wildcard vendor/aosip/prebuilt/common/etc/init/*.rc),\
-	$(eval PRODUCT_COPY_FILES += $(f):$(TARGET_COPY_OUT_SYSTEM)/etc/init/$(notdir $f)))
+#$(foreach f,$(wildcard vendor/aosip/prebuilt/common/etc/init/*.rc),\
+#	$(eval PRODUCT_COPY_FILES += $(f):$(TARGET_COPY_OUT_SYSTEM)/etc/init/$(notdir $f)))
 
 # Dex preopt
 PRODUCT_DEXPREOPT_SPEED_APPS += \
     SystemUI \
     Launcher3QuickStep
-
-# Don't compile SystemUITests
-EXCLUDE_SYSTEMUI_TESTS := true
 
 # Don't include art debug targets
 PRODUCT_ART_TARGET_INCLUDE_DEBUG_BUILD := false
@@ -85,7 +82,7 @@ PRODUCT_MINIMIZE_JAVA_DEBUG_INFO := true
 PRODUCT_RESTRICT_VENDOR_FILES := false
 
 # Overlays
-include vendor/overlay/overlays.mk
+#include vendor/overlay/overlays.mk
 
 # Packages
 include vendor/aosip/config/packages.mk

@@ -14,15 +14,15 @@ PRODUCT_PACKAGES += \
     awk \
     bash \
     bzip2 \
-    curl \
-    getcap \
+#    curl \
+#    getcap \
     htop \
     lib7z \
     libsepol \
     nano \
     pigz \
     powertop \
-    setcap \
+#    setcap \
     unrar \
     unzip \
     vim \
@@ -41,4 +41,4 @@ PRODUCT_PACKAGES += \
 # Include explicitly to work around GMS issues
 PRODUCT_PACKAGES += \
     libprotobuf-cpp-full \
-    librsjni
+#    librsjni
