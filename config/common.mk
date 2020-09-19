@@ -65,6 +65,10 @@ PRODUCT_COPY_FILES += \
 $(foreach f,$(wildcard vendor/aosip/prebuilt/common/etc/init/*.rc),\
 	$(eval PRODUCT_COPY_FILES += $(f):$(TARGET_COPY_OUT_SYSTEM)/etc/init/$(notdir $f)))
 
+ifeq ($(TARGET_USE_QTI_BT_STACK),true)
+PRODUCT_PACKAGES += libbluetooth_qti
+endif #TARGET_USE_QTI_BT_STACK
+
 # Dex preopt
 PRODUCT_DEXPREOPT_SPEED_APPS += \
     SystemUI \
