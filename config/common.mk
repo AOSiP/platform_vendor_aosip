@@ -172,7 +172,10 @@ system/xbin/htop \
 system/xbin/pigz \
 system/xbin/unrar \
 system/xbin/vim \
-system/xbin/zip
+system/xbin/zip \
+system/bin/backuptool_ab.functions \
+system/bin/backuptool_ab.sh \
+system/bin/backuptool_postinstall.sh
 
 
 # Overlays
