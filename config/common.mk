@@ -52,6 +52,10 @@ endif
 PRODUCT_COPY_FILES += \
     vendor/aosip/config/backup.xml:system/etc/sysconfig/backup.xml
 
+# AOSiP-specific component overrides
+PRODUCT_COPY_FILES += \
+    vendor/aosip/config/component-overrides.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/component-overrides.xml
+
 # Charger
 PRODUCT_PACKAGES += \
     charger_res_images
