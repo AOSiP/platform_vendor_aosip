@@ -1,6 +1,6 @@
 android_library {
 
-    name: "VendorSupport-preference",
+    name: "VendorSupport-Libs",
 
     optimize: {
         enabled: false,
