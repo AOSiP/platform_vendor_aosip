@@ -5,6 +5,7 @@ PRODUCT_PACKAGES += \
     Jelly \
     LatinIME \
     messaging \
+    QuickAccessWallet \
     ThemePicker \
     Updater
 
