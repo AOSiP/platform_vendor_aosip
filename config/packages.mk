@@ -6,6 +6,7 @@ PRODUCT_PACKAGES += \
     LatinIME \
     messaging \
     QuickAccessWallet \
+    SimpleDeviceConfig \
     ThemePicker \
     Updater
 
