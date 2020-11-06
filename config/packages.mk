@@ -1,5 +1,6 @@
 # Required packages
 PRODUCT_PACKAGES += \
+    Etar \
     Gallery2 \
     Jelly \
     LatinIME \
