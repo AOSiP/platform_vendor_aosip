@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c0c03671_3a8f6750",
+        "filename": "build/soong/Android.bp",
+        "patchSetId": 3
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 1000429
+      },
+      "writtenOn": "2020-11-09T16:57:08Z",
+      "side": 1,
+      "message": "aosipGlobalVars?",
+      "revId": "52a7c190c62d2325f2b82290b91f6a3e7f5cb711",
+      "serverId": "44769751-fbfc-497d-9c9a-4bb318a4117c",
+      "unresolved": true
+    }
+  ]
+}
