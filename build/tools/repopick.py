@@ -30,6 +30,7 @@ import re
 import argparse
 import textwrap
 from functools import cmp_to_key
+from threading import Thread
 from xml.etree import ElementTree
 
 try:
@@ -140,6 +141,149 @@ def fetch_query(remote_url, query):
         return fetch_query_via_http(remote_url, query.replace(' ', '+'))
     else:
         raise Exception('Gerrit URL should be in the form http[s]://hostname/ or ssh://[user@]host[:port]')
+
+
+def pick(mergables):
+    for item in mergables:
+        args.quiet or print('Applying change number {0}...'.format(item['id']))
+        # Check if change is open and exit if it's not, unless -f is specified
+        if (item['status'] != 'OPEN' and item['status'] != 'NEW' and item['status'] != 'DRAFT') and not args.query:
+            if args.force:
+                print('!! Force-picking a closed change !!\n')
+            else:
+                print('Change status is ' + item['status'] + '. Skipping the cherry pick.\nUse -f to force this pick.')
+                continue
+
+        # Convert the project name to a project path
+        #   - check that the project path exists
+        project_path = None
+
+        if item['project'] == 'platform_manifest':
+            project_path = '.repo/manifests'
+        elif item['project'] in project_name_to_data and item['branch'] in project_name_to_data[item['project']]:
+            project_path = project_name_to_data[item['project']][item['branch']]
+        elif args.path:
+            project_path = args.path
+        elif item['project'] in project_name_to_data and len(project_name_to_data[item['project']]) == 1:
+            local_branch = list(project_name_to_data[item['project']])[0]
+            project_path = project_name_to_data[item['project']][local_branch]
+            print('WARNING: Project {0} has a different branch ("{1}" != "{2}")'.format(project_path, local_branch, item['branch']))
+        elif args.ignore_missing:
+            print('WARNING: Skipping {0} since there is no project directory for: {1}\n'.format(item['id'], item['project']))
+            continue
+        else:
+            sys.stderr.write('ERROR: For {0}, could not determine the project path for project {1}\n'.format(item['id'], item['project']))
+            sys.exit(1)
+
+        # If --start-branch is given, create the branch (more than once per path is okay; repo ignores gracefully)
+        if args.start_branch:
+            subprocess.check_output(['repo', 'start', args.start_branch[0], project_path])
+
+        # Determine the maximum commits to check already picked changes
+        check_picked_count = args.check_picked
+        branch_commits_count = int(subprocess.check_output(['git', 'rev-list', '--count', 'HEAD'], cwd=project_path))
+        if branch_commits_count <= check_picked_count:
+            check_picked_count = branch_commits_count - 1
+
+        # Check if change is already picked to HEAD...HEAD~check_picked_count
+        found_change = False
+        for i in range(0, check_picked_count):
+            if subprocess.call(['git', 'cat-file', '-e', 'HEAD~{0}'.format(i)], cwd=project_path, stderr=open(os.devnull, 'wb')):
+                continue
+            output = subprocess.check_output(['git', 'show', '-q', 'HEAD~{0}'.format(i)], cwd=project_path)
+            # make sure we have a string on Python 3
+            if isinstance(output, bytes):
+                output = output.decode('utf-8')
+            output = output.split()
+            if 'Change-Id:' in output:
+                head_change_id = ''
+                for j,t in enumerate(reversed(output)):
+                    if t == 'Change-Id:':
+                        head_change_id = output[len(output) - j]
+                        break
+                if head_change_id.strip() == item['change_id']:
+                    print('Skipping {0} - already picked in {1} as HEAD~{2}'.format(item['id'], project_path, i))
+                    found_change = True
+                    break
+        if found_change:
+            continue
+
+        # Print out some useful info
+        if not args.quiet:
+            print(u'--> Subject:       "{0}"'.format(item['subject']))
+            print('--> Project path:  {0}'.format(project_path))
+            print('--> Change number: {0} (Patch Set {1})'.format(item['id'], item['patchset']))
+
+        if 'anonymous http' in item['fetch']:
+            method = 'anonymous http'
+        else:
+            method = 'ssh'
+
+        # Try fetching from GitHub first if using default gerrit
+        if args.gerrit == default_gerrit:
+            if args.verbose:
+                print('Trying to fetch the change from GitHub')
+
+            if args.pull:
+                cmd = ['git pull --no-edit aosip', item['fetch'][method]['ref']]
+            else:
+                cmd = ['git fetch aosip', item['fetch'][method]['ref']]
+            if args.quiet:
+                cmd.append('--quiet')
+            else:
+                print("executing: {}".format(" ".join(cmd)))
+            result = subprocess.call([' '.join(cmd)], cwd=project_path, shell=True)
+            FETCH_HEAD = '{0}/.git/FETCH_HEAD'.format(project_path)
+            if result != 0 and os.stat(FETCH_HEAD).st_size != 0:
+                print('ERROR: git command failed')
+                sys.exit(result)
+        # Check if it worked
+        if args.gerrit != default_gerrit or os.stat(FETCH_HEAD).st_size == 0:
+            # If not using the default gerrit or github failed, fetch from gerrit.
+            if args.verbose:
+                if args.gerrit == default_gerrit:
+                    print('Fetching from GitHub didn\'t work, trying to fetch the change from Gerrit')
+                else:
+                    print('Fetching from {0}'.format(args.gerrit))
+
+            if args.pull:
+                cmd = ['git pull --no-edit', item['fetch'][method]['url'], item['fetch'][method]['ref']]
+            else:
+                cmd = ['git fetch', item['fetch'][method]['url'], item['fetch'][method]['ref']]
+            if args.quiet:
+                cmd.append('--quiet')
+            else:
+                print(cmd)
+            result = subprocess.call([' '.join(cmd)], cwd=project_path, shell=True)
+            if result != 0:
+                print('ERROR: git command failed')
+                sys.exit(result)
+        # Perform the cherry-pick
+        if not args.pull:
+            cmd = ['git cherry-pick --ff FETCH_HEAD']
+            if args.quiet:
+                cmd_out = open(os.devnull, 'wb')
+            else:
+                cmd_out = None
+            result = subprocess.call(cmd, cwd=project_path, shell=True, stdout=cmd_out, stderr=cmd_out)
+            if result != 0:
+                cmd = ['git diff-index --quiet HEAD --']
+                result = subprocess.call(cmd, cwd=project_path, shell=True, stdout=cmd_out, stderr=cmd_out)
+                if result == 0:
+                    print('WARNING: git command resulted with an empty commit, aborting cherry-pick')
+                    cmd = ['git cherry-pick --abort']
+                    subprocess.call(cmd, cwd=project_path, shell=True, stdout=cmd_out, stderr=cmd_out)
+                elif args.reset:
+                    print('ERROR: git command failed, aborting cherry-pick')
+                    cmd = ['git cherry-pick --abort']
+                    subprocess.call(cmd, cwd=project_path, shell=True, stdout=cmd_out, stderr=cmd_out)
+                    sys.exit(result)
+                else:
+                    print('ERROR: git command failed')
+                    sys.exit(result)
+        if not args.quiet:
+            print('')
+
 
 if __name__ == '__main__':
     # Default to AOSiP Gerrit
@@ -365,142 +509,13 @@ if __name__ == '__main__':
             except (IndexError, ValueError):
                 args.quiet or print('ERROR: The patch set {0}/{1} could not be found, using CURRENT_REVISION instead.'.format(change, patchset))
 
+    picks = {}
     for item in mergables:
-        args.quiet or print('Applying change number {0}...'.format(item['id']))
-        # Check if change is open and exit if it's not, unless -f is specified
-        if (item['status'] != 'OPEN' and item['status'] != 'NEW' and item['status'] != 'DRAFT') and not args.query:
-            if args.force:
-                print('!! Force-picking a closed change !!\n')
-            else:
-                print('Change status is ' + item['status'] + '. Skipping the cherry pick.\nUse -f to force this pick.')
-                continue
-
-        # Convert the project name to a project path
-        #   - check that the project path exists
-        project_path = None
-
-        if item['project'] == 'platform_manifest':
-            project_path = '.repo/manifests'
-        elif item['project'] in project_name_to_data and item['branch'] in project_name_to_data[item['project']]:
-            project_path = project_name_to_data[item['project']][item['branch']]
-        elif args.path:
-            project_path = args.path
-        elif item['project'] in project_name_to_data and len(project_name_to_data[item['project']]) == 1:
-            local_branch = list(project_name_to_data[item['project']])[0]
-            project_path = project_name_to_data[item['project']][local_branch]
-            print('WARNING: Project {0} has a different branch ("{1}" != "{2}")'.format(project_path, local_branch, item['branch']))
-        elif args.ignore_missing:
-            print('WARNING: Skipping {0} since there is no project directory for: {1}\n'.format(item['id'], item['project']))
-            continue
+        if item['project'] in picks:
+            picks[item['project']].append(item)
         else:
-            sys.stderr.write('ERROR: For {0}, could not determine the project path for project {1}\n'.format(item['id'], item['project']))
-            sys.exit(1)
+            picks[item['project']] = [item]
 
-        # If --start-branch is given, create the branch (more than once per path is okay; repo ignores gracefully)
-        if args.start_branch:
-            subprocess.check_output(['repo', 'start', args.start_branch[0], project_path])
+    for project in picks:
+        Thread(target=pick, args=([picks[project]])).start()
 
-        # Determine the maximum commits to check already picked changes
-        check_picked_count = args.check_picked
-        branch_commits_count = int(subprocess.check_output(['git', 'rev-list', '--count', 'HEAD'], cwd=project_path))
-        if branch_commits_count <= check_picked_count:
-            check_picked_count = branch_commits_count - 1
-
-        # Check if change is already picked to HEAD...HEAD~check_picked_count
-        found_change = False
-        for i in range(0, check_picked_count):
-            if subprocess.call(['git', 'cat-file', '-e', 'HEAD~{0}'.format(i)], cwd=project_path, stderr=open(os.devnull, 'wb')):
-                continue
-            output = subprocess.check_output(['git', 'show', '-q', 'HEAD~{0}'.format(i)], cwd=project_path)
-            # make sure we have a string on Python 3
-            if isinstance(output, bytes):
-                output = output.decode('utf-8')
-            output = output.split()
-            if 'Change-Id:' in output:
-                head_change_id = ''
-                for j,t in enumerate(reversed(output)):
-                    if t == 'Change-Id:':
-                        head_change_id = output[len(output) - j]
-                        break
-                if head_change_id.strip() == item['change_id']:
-                    print('Skipping {0} - already picked in {1} as HEAD~{2}'.format(item['id'], project_path, i))
-                    found_change = True
-                    break
-        if found_change:
-            continue
-
-        # Print out some useful info
-        if not args.quiet:
-            print(u'--> Subject:       "{0}"'.format(item['subject']))
-            print('--> Project path:  {0}'.format(project_path))
-            print('--> Change number: {0} (Patch Set {1})'.format(item['id'], item['patchset']))
-
-        if 'anonymous http' in item['fetch']:
-            method = 'anonymous http'
-        else:
-            method = 'ssh'
-
-        # Try fetching from GitHub first if using default gerrit
-        if args.gerrit == default_gerrit:
-            if args.verbose:
-                print('Trying to fetch the change from GitHub')
-
-            if args.pull:
-                cmd = ['git pull --no-edit aosip', item['fetch'][method]['ref']]
-            else:
-                cmd = ['git fetch aosip', item['fetch'][method]['ref']]
-            if args.quiet:
-                cmd.append('--quiet')
-            else:
-                print("executing: {}".format(" ".join(cmd)))
-            result = subprocess.call([' '.join(cmd)], cwd=project_path, shell=True)
-            FETCH_HEAD = '{0}/.git/FETCH_HEAD'.format(project_path)
-            if result != 0 and os.stat(FETCH_HEAD).st_size != 0:
-                print('ERROR: git command failed')
-                sys.exit(result)
-        # Check if it worked
-        if args.gerrit != default_gerrit or os.stat(FETCH_HEAD).st_size == 0:
-            # If not using the default gerrit or github failed, fetch from gerrit.
-            if args.verbose:
-                if args.gerrit == default_gerrit:
-                    print('Fetching from GitHub didn\'t work, trying to fetch the change from Gerrit')
-                else:
-                    print('Fetching from {0}'.format(args.gerrit))
-
-            if args.pull:
-                cmd = ['git pull --no-edit', item['fetch'][method]['url'], item['fetch'][method]['ref']]
-            else:
-                cmd = ['git fetch', item['fetch'][method]['url'], item['fetch'][method]['ref']]
-            if args.quiet:
-                cmd.append('--quiet')
-            else:
-                print(cmd)
-            result = subprocess.call([' '.join(cmd)], cwd=project_path, shell=True)
-            if result != 0:
-                print('ERROR: git command failed')
-                sys.exit(result)
-        # Perform the cherry-pick
-        if not args.pull:
-            cmd = ['git cherry-pick --ff FETCH_HEAD']
-            if args.quiet:
-                cmd_out = open(os.devnull, 'wb')
-            else:
-                cmd_out = None
-            result = subprocess.call(cmd, cwd=project_path, shell=True, stdout=cmd_out, stderr=cmd_out)
-            if result != 0:
-                cmd = ['git diff-index --quiet HEAD --']
-                result = subprocess.call(cmd, cwd=project_path, shell=True, stdout=cmd_out, stderr=cmd_out)
-                if result == 0:
-                    print('WARNING: git command resulted with an empty commit, aborting cherry-pick')
-                    cmd = ['git cherry-pick --abort']
-                    subprocess.call(cmd, cwd=project_path, shell=True, stdout=cmd_out, stderr=cmd_out)
-                elif args.reset:
-                    print('ERROR: git command failed, aborting cherry-pick')
-                    cmd = ['git cherry-pick --abort']
-                    subprocess.call(cmd, cwd=project_path, shell=True, stdout=cmd_out, stderr=cmd_out)
-                    sys.exit(result)
-                else:
-                    print('ERROR: git command failed')
-                    sys.exit(result)
-        if not args.quiet:
-            print('')
