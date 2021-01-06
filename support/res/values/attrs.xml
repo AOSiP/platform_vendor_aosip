@@ -22,10 +22,23 @@
         <attr name="allowEditText" format="boolean" />
     </declare-styleable>
 
-    <declare-styleable name="ColorSelectPreference">
+    <!-- Value to pass to callback when restore button is pressed -->
+    <declare-styleable name="ColorPickerPreference">
+        <attr name="alphaSlider" format="boolean" />
         <attr name="ledPreview" format="boolean" />
-        <attr name="multiColor" format="boolean" />
-        <attr name="withAlpha" format="boolean" />
+    </declare-styleable>
+
+    <!-- Base attributes available to CircularImageView -->
+    <declare-styleable name="CircularImageView">
+        <attr name="civ_border" format="boolean"/>
+        <attr name="civ_border_width" format="dimension"/>
+        <attr name="civ_border_color" format="color"/>
+    </declare-styleable>
+
+    <!-- Base attributes available to RowLayout -->
+    <declare-styleable name="RowLayout">
+        <attr name="android:verticalSpacing" />
+        <attr name="android:horizontalSpacing" />
     </declare-styleable>
 
 </resources>

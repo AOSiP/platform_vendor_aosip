@@ -1,6 +1,6 @@
 /*
  * Copyright (C) 2010 Daniel Nilsson
- * Copyright (C) 2012 The CyanogenMod Project
+ * Copyright (C) 2013 Slimroms
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package com.aosip.support.ui;
+package com.aosip.support.colorpicker;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -25,63 +25,65 @@ import android.util.AttributeSet;
 import android.view.View;
 
 /**
- * This class draws a panel which which will be filled with a color which can be
- * set. It can be used to show the currently selected color which you will get
- * from the {@link ColorPickerView}.
- *
+ * This class draws a panel which which will be filled with a color which can be set.
+ * It can be used to show the currently selected color which you will get from
+ * the {@link ColorPickerView}.
  * @author Daniel Nilsson
+ *
  */
-public class ColorPanelView extends View {
+public class ColorPickerPanelView extends View {
 
     /**
-     * The width in pixels of the border surrounding the color panel.
+     * The width in pixels of the border
+     * surrounding the color panel.
      */
-    private final static float BORDER_WIDTH_PX = 1;
+    private final static float    BORDER_WIDTH_PX = 1;
 
     private static float mDensity = 1f;
 
-    private int mBorderColor = 0xff6E6E6E;
-    private int mColor = 0xff000000;
+    private int         mBorderColor = 0xff6E6E6E;
+    private int         mColor = 0xff000000;
 
-    private Paint mBorderPaint;
-    private Paint mColorPaint;
+    private Paint        mBorderPaint;
+    private Paint        mColorPaint;
 
-    private RectF mDrawingRect;
-    private RectF mColorRect;
+    private RectF        mDrawingRect;
+    private RectF        mColorRect;
 
     private AlphaPatternDrawable mAlphaPattern;
 
-    public ColorPanelView(Context context) {
+
+    public ColorPickerPanelView(Context context){
         this(context, null);
     }
 
-    public ColorPanelView(Context context, AttributeSet attrs) {
+    public ColorPickerPanelView(Context context, AttributeSet attrs){
         this(context, attrs, 0);
     }
 
-    public ColorPanelView(Context context, AttributeSet attrs, int defStyle) {
+    public ColorPickerPanelView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
-
         init();
     }
 
-    private void init() {
+    private void init(){
         mBorderPaint = new Paint();
         mColorPaint = new Paint();
         mDensity = getContext().getResources().getDisplayMetrics().density;
     }
 
+
     @Override
     protected void onDraw(Canvas canvas) {
 
-        final RectF rect = mColorRect;
+        final RectF    rect = mColorRect;
 
-        if (BORDER_WIDTH_PX > 0) {
+        if(BORDER_WIDTH_PX > 0){
             mBorderPaint.setColor(mBorderColor);
             canvas.drawRect(mDrawingRect, mBorderPaint);
         }
 
-        if (mAlphaPattern != null) {
+        if(mAlphaPattern != null){
             mAlphaPattern.draw(canvas);
         }
 
@@ -104,8 +106,8 @@ public class ColorPanelView extends View {
         super.onSizeChanged(w, h, oldw, oldh);
 
         mDrawingRect = new RectF();
-        mDrawingRect.left = getPaddingLeft();
-        mDrawingRect.right = w - getPaddingRight();
+        mDrawingRect.left =  getPaddingLeft();
+        mDrawingRect.right  = w - getPaddingRight();
         mDrawingRect.top = getPaddingTop();
         mDrawingRect.bottom = h - getPaddingBottom();
 
@@ -113,50 +115,49 @@ public class ColorPanelView extends View {
 
     }
 
-    private void setUpColorRect() {
-        final RectF dRect = mDrawingRect;
+    private void setUpColorRect(){
+        final RectF    dRect = mDrawingRect;
 
         float left = dRect.left + BORDER_WIDTH_PX;
         float top = dRect.top + BORDER_WIDTH_PX;
         float bottom = dRect.bottom - BORDER_WIDTH_PX;
         float right = dRect.right - BORDER_WIDTH_PX;
 
-        mColorRect = new RectF(left, top, right, bottom);
+        mColorRect = new RectF(left,top, right, bottom);
 
-        mAlphaPattern = new AlphaPatternDrawable((int) (5 * mDensity));
+        mAlphaPattern = new AlphaPatternDrawable((int)(5 * mDensity));
 
-        mAlphaPattern.setBounds(Math.round(mColorRect.left),
-                Math.round(mColorRect.top),
-                Math.round(mColorRect.right),
-                Math.round(mColorRect.bottom));
+        mAlphaPattern.setBounds(
+            Math.round(mColorRect.left),
+            Math.round(mColorRect.top),
+            Math.round(mColorRect.right),
+            Math.round(mColorRect.bottom)
+        );
 
     }
 
     /**
      * Set the color that should be shown by this view.
-     *
      * @param color
      */
-    public void setColor(int color) {
+    public void setColor(int color){
         mColor = color;
         invalidate();
     }
 
     /**
      * Get the color currently show by this view.
-     *
      * @return
      */
-    public int getColor() {
+    public int getColor(){
         return mColor;
     }
 
     /**
      * Set the color of the border surrounding the panel.
-     *
      * @param color
      */
-    public void setBorderColor(int color) {
+    public void setBorderColor(int color){
         mBorderColor = color;
         invalidate();
     }
@@ -164,7 +165,8 @@ public class ColorPanelView extends View {
     /**
      * Get the color of the border surrounding the panel.
      */
-    public int getBorderColor() {
+    public int getBorderColor(){
         return mBorderColor;
     }
+
 }
