@@ -1,5 +1,6 @@
 # Required packages
 PRODUCT_PACKAGES += \
+    DU-Themes \
     Etar \
     Gallery2 \
     Jelly \
