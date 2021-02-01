@@ -39,3 +39,8 @@ ifneq ($(OVERRIDE_OTA_CHANNEL),)
     PRODUCT_PROPERTY_OVERRIDES += \
         aosip.updater.uri=$(OVERRIDE_OTA_CHANNEL)
 endif
+
+# Sign builds if building an official build
+ifeq ($(filter-out Ravioli,$(AOSIP_BUILDTYPE)),)
+    PRODUCT_DEFAULT_DEV_CERTIFICATE := vendor/security/releasekey
+endif
