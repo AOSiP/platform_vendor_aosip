@@ -33,6 +33,23 @@
       "message": "bruh moment",
       "revId": "603dd378041e2c03426218730cd6cdc973b4d831",
       "serverId": "44769751-fbfc-497d-9c9a-4bb318a4117c"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6fddff1d_4dd99d23",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000232
+      },
+      "writtenOn": "2021-02-08T12:04:53Z",
+      "side": 1,
+      "message": "This should have been requested in support chats, not here",
+      "revId": "603dd378041e2c03426218730cd6cdc973b4d831",
+      "serverId": "44769751-fbfc-497d-9c9a-4bb318a4117c"
     }
   ]
 }
