@@ -47,6 +47,7 @@ SOONG_CONFIG_aosipNvidiaVars += \
 
 SOONG_CONFIG_NAMESPACES += aosipQcomVars
 SOONG_CONFIG_aosipQcomVars += \
+    legacy_hw_disk_encryption \
     should_wait_for_qsee \
     supports_extended_compress_format \
     supports_hw_fde \
@@ -68,6 +69,7 @@ SOONG_CONFIG_aosipGlobalVars_has_memfd_backport := $(TARGET_HAS_MEMFD_BACKPORT)
 SOONG_CONFIG_aosipGlobalVars_ignores_ftp_pptp_conntrack_failure := $(TARGET_IGNORES_FTP_PPTP_CONNTRACK_FAILURE)
 SOONG_CONFIG_aosipGlobalVars_needs_netd_direct_connect_rule := $(TARGET_NEEDS_NETD_DIRECT_CONNECT_RULE)
 SOONG_CONFIG_aosipNvidiaVars_uses_nv_enhancements := $(NV_ANDROID_FRAMEWORK_ENHANCEMENTS)
+SOONG_CONFIG_aosipQcomVars_legacy_hw_disk_encryption := $(TARGET_LEGACY_HW_DISK_ENCRYPTION)
 SOONG_CONFIG_aosipQcomVars_should_wait_for_qsee := $(TARGET_KEYMASTER_WAIT_FOR_QSEE)
 SOONG_CONFIG_aosipQcomVars_supports_extended_compress_format := $(AUDIO_FEATURE_ENABLED_EXTENDED_COMPRESS_FORMAT)
 SOONG_CONFIG_aosipQcomVars_supports_hw_fde := $(TARGET_HW_DISK_ENCRYPTION)
