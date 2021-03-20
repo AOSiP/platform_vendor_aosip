@@ -42,6 +42,6 @@ PRODUCT_PACKAGES += \
     mount.ntfs
 
 # Include explicitly to work around GMS issues
-PRODUCT_PACKAGES += \
-    libprotobuf-cpp-full \
-    librsjni
+#PRODUCT_PACKAGES += \
+#    libprotobuf-cpp-full \
+#    librsjni
