@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "11682b30_7565d11d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000314
+      },
+      "writtenOn": "2021-04-15T06:24:23Z",
+      "side": 1,
+      "message": "Adding the entry manually fixes carrier video calls, this exists in caf apns by default",
+      "revId": "0b901dfc8da1486f46bf92364ab82869a1d38058",
+      "serverId": "44769751-fbfc-497d-9c9a-4bb318a4117c"
+    }
+  ]
+}
